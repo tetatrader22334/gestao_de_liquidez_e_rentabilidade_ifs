@@ -1,0 +1,17 @@
+variavel,importancia_gini_mse
+despesas_administrativas,0.2218666377364491
+depositos_a_prazo_sobre_ativo_total,0.10659315248977419
+depositos_a_vista_sobre_ativo_total,0.08797080959000052
+nsfr_dec,0.07698976284291134
+provisao_sobre_operacoes_de_credito,0.07075650655722004
+ativos_sobre_depositos,0.06638452056181157
+captacoes_sobre_ativo_total,0.06208293406841437
+indice_de_imobilizacao,0.061339090219922135
+lcr_dec,0.06126932998826155
+liquidez_imediata,0.05781011229427374
+disponibilidades_sobre_depositos,0.05486167334165025
+operacoes_de_credito_sobre_captacoes,0.04099559286674641
+estatal,0.012182496647532301
+crise_nme,0.008448506202173243
+controle_estrangeiro,0.005374905236819249
+crise_covid,0.005073969356039897

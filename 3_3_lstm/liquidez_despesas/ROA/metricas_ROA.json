@@ -1,0 +1,108 @@
+{
+  "target": "ROA",
+  "horizon": 1,
+  "feature_preset": "compact_banking",
+  "include_profitability_history": false,
+  "include_entity_dummies": false,
+  "n_features": 16,
+  "features": [
+    "provisao_sobre_operacoes_de_credito",
+    "liquidez_imediata",
+    "ativos_sobre_depositos",
+    "disponibilidades_sobre_depositos",
+    "operacoes_de_credito_sobre_captacoes",
+    "depositos_a_prazo_sobre_ativo_total",
+    "depositos_a_vista_sobre_ativo_total",
+    "captacoes_sobre_ativo_total",
+    "indice_de_imobilizacao",
+    "estatal",
+    "controle_estrangeiro",
+    "crise_nme",
+    "crise_covid",
+    "lcr_dec",
+    "nsfr_dec",
+    "despesas_adm_sobre_receitas"
+  ],
+  "split_info": {
+    "train_periods": [
+      201603,
+      201606,
+      201609,
+      201612,
+      201703,
+      201706,
+      201709,
+      201712,
+      201803,
+      201806,
+      201809,
+      201812,
+      201903,
+      201906,
+      201909,
+      201912,
+      202003,
+      202006,
+      202009,
+      202012
+    ],
+    "val_periods": [
+      202103,
+      202106,
+      202109,
+      202112,
+      202203,
+      202206,
+      202209,
+      202212
+    ],
+    "test_periods": [
+      202303,
+      202306,
+      202309,
+      202312,
+      202403,
+      202406,
+      202409,
+      202412
+    ],
+    "n_train": 280,
+    "n_val": 111,
+    "n_test": 112
+  },
+  "best_trial_number": 7,
+  "best_validation_rmse_from_study": 0.002875107061792376,
+  "best_params": {
+    "seq_len": 8,
+    "scaler": "standard",
+    "n_layers": 2,
+    "units": 128,
+    "dropout": 0.1,
+    "recurrent_dropout": 0.05,
+    "dense_units": 16,
+    "learning_rate": 0.00010623321569909552,
+    "l2": 0.00043811973159775693,
+    "batch_size": 16,
+    "optimizer": "rmsprop",
+    "bidirectional": false,
+    "layer_norm": true
+  },
+  "train_metrics": {
+    "rmse": 0.003017995082931107,
+    "mae": 0.0021951216466771714,
+    "r2": 0.5391125783132156,
+    "directional_accuracy": 0.5448028673835126
+  },
+  "validation_metrics": {
+    "rmse": 0.00302716815072236,
+    "mae": 0.002220900445073299,
+    "r2": 0.379274840133624,
+    "directional_accuracy": 0.5
+  },
+  "test_metrics": {
+    "rmse": 0.004188272311807222,
+    "mae": 0.003152897851582116,
+    "r2": -0.09623372834510846,
+    "directional_accuracy": 0.46846846846846846
+  }
+}

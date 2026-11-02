@@ -1,0 +1,28 @@
+{
+  "config": {
+    "input_path": "bases/base_final.xlsx",
+    "sheet": "base",
+    "target": "ROA",
+    "output_dir": "outputs\\selecao_de_vars\\liquidez_despesas",
+    "missing_threshold": 0.4,
+    "corr_threshold": 0.95,
+    "vif_threshold": 10.0,
+    "top_k": 25,
+    "min_abs_target_corr": 0.0,
+    "include_time_vars": false,
+    "include_entity_dummies": false,
+    "random_state": 42
+  },
+  "target_col": "ROA",
+  "created_targets": [
+    "ROA_calc"
+  ],
+  "outputs": {
+    "excel_report": "outputs\\selecao_de_vars\\liquidez_despesas\\relatorio_analise_variaveis.xlsx",
+    "markdown_report": "outputs\\selecao_de_vars\\liquidez_despesas\\relatorio_analise_variaveis.md",
+    "selected_variables_csv": "outputs\\selecao_de_vars\\liquidez_despesas\\variaveis_selecionadas.csv",
+    "metadata_json": "outputs\\selecao_de_vars\\liquidez_despesas\\metadados_analise.json"
+  },
+  "generated_at": "2026-05-27T13:17:11",
+  "sklearn_available": true
+}

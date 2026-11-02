@@ -1,0 +1,42 @@
+{
+  "base": "bases/base_final_winsorizada.xlsx",
+  "modelo": "outputs/modelos/AM2 - LSTM/liquidez_receitas/ROE/lstm_automl_ROE.keras",
+  "preprocessadores": "outputs/modelos/AM2 - LSTM/liquidez_receitas/ROE/preprocessadores_ROE.joblib",
+  "output_dir": "outputs\\SHAP\\LSTM\\liquidez_receitas\\ROE",
+  "config": {
+    "sheet": 0,
+    "target": "ROE",
+    "entity_col": "id_entidade",
+    "time_col": "AnoMes_ord",
+    "horizon": 1,
+    "seq_len": 8,
+    "test_periods": 8
+  },
+  "n_features": 18,
+  "features": [
+    "liquidez_imediata",
+    "ativos_sobre_depositos",
+    "disponibilidades_sobre_depositos",
+    "operacoes_de_credito_sobre_captacoes",
+    "depositos_a_prazo_sobre_ativo_total",
+    "depositos_a_vista_sobre_ativo_total",
+    "captacoes_sobre_ativo_total",
+    "indice_de_imobilizacao",
+    "estatal",
+    "controle_estrangeiro",
+    "crise_nme",
+    "crise_covid",
+    "lcr_dec",
+    "nsfr_dec",
+    "receitas_de_intermediacao_financeira_sobre_ativo_total",
+    "rendas_de_operacoes_com_TVM_sobre_ativo_total",
+    "rendas_de_prestacao_de_servicos_sobre_ativo_total",
+    "rendas_de_tarifas_bancarias_sobre_ativo_total"
+  ],
+  "n_sequences_total": 503,
+  "n_background": 40,
+  "n_explain": 80,
+  "explainer": "permutation",
+  "inverse_y": true,
+  "random_state": 42
+}

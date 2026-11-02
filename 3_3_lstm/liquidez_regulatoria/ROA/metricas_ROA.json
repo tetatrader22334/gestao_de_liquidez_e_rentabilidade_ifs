@@ -1,0 +1,94 @@
+{
+  "target": "ROA",
+  "horizon": 1,
+  "feature_preset": "compact_banking",
+  "include_profitability_history": false,
+  "include_entity_dummies": false,
+  "n_features": 6,
+  "features": [
+    "estatal",
+    "controle_estrangeiro",
+    "crise_nme",
+    "crise_covid",
+    "lcr_dec",
+    "nsfr_dec"
+  ],
+  "split_info": {
+    "train_periods": [
+      201703,
+      201706,
+      201709,
+      201712,
+      201803,
+      201806,
+      201809,
+      201812,
+      201903,
+      201906,
+      201909,
+      201912,
+      202003,
+      202006,
+      202009,
+      202012
+    ],
+    "val_periods": [
+      202103,
+      202106,
+      202109,
+      202112,
+      202203,
+      202206,
+      202209,
+      202212
+    ],
+    "test_periods": [
+      202303,
+      202306,
+      202309,
+      202312,
+      202403,
+      202406,
+      202409,
+      202412
+    ],
+    "n_train": 224,
+    "n_val": 111,
+    "n_test": 112
+  },
+  "best_trial_number": 42,
+  "best_validation_rmse_from_study": 0.003091785676643388,
+  "best_params": {
+    "seq_len": 12,
+    "scaler": "robust",
+    "n_layers": 2,
+    "units": 64,
+    "dropout": 0.05,
+    "recurrent_dropout": 0.05,
+    "dense_units": 16,
+    "learning_rate": 0.001488782861063591,
+    "l2": 1.1209903222341468e-06,
+    "batch_size": 64,
+    "optimizer": "rmsprop",
+    "bidirectional": false,
+    "layer_norm": false
+  },
+  "train_metrics": {
+    "rmse": 0.003377741336283221,
+    "mae": 0.0022518797067371623,
+    "r2": 0.47050607846659953,
+    "directional_accuracy": 0.547085201793722
+  },
+  "validation_metrics": {
+    "rmse": 0.0034705822967671714,
+    "mae": 0.0024496540862162996,
+    "r2": 0.18411123588361522,
+    "directional_accuracy": 0.509090909090909
+  },
+  "test_metrics": {
+    "rmse": 0.004369385782250643,
+    "mae": 0.003319112959412965,
+    "r2": -0.1930925144953901,
+    "directional_accuracy": 0.4954954954954955
+  }
+}

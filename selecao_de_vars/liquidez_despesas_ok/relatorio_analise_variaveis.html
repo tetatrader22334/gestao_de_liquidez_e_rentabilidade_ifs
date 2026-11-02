@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>relatorio_analise_variaveis.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> or <div class="page"></div> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="relatório-de-análise-descritiva-e-seleção-de-variáveis">Relatório de análise descritiva e seleção de variáveis</h1>
+<p><strong>Arquivo analisado:</strong> <code>bases/base_final.xlsx</code><br>
+<strong>Aba:</strong> <code>base</code><br>
+<strong>Data de geração:</strong> 2026-05-27 13:17:11<br>
+<strong>Variável-alvo:</strong> <code>ROA</code></p>
+<h2 id="1-visão-geral-da-base">1. Visão geral da base</h2>
+<ul>
+<li>Número de linhas: <strong>615</strong></li>
+<li>Número de colunas: <strong>85</strong></li>
+<li>Variáveis numéricas: <strong>84</strong></li>
+<li>Variáveis categóricas/textuais: <strong>1</strong></li>
+<li>Alvos derivados criados automaticamente: <strong>ROA_calc</strong></li>
+</ul>
+<h2 id="2-estatísticas-descritivas-numéricas--primeiras-variáveis-por-menor-missing">2. Estatísticas descritivas numéricas — primeiras variáveis por menor missing</h2>
+<pre class="hljs"><code><div>                           variavel   n  missing  missing_pct        media          moda      mediana  desvio_padrao  coef_variacao           min           q1           q3          max  assimetria   curtose  zeros  zeros_pct_validos  valores_unicos
+                         AnoMes_ord 615        0          0.0 2.019070e+05  2.014030e+05 2.019060e+05   3.165260e+02       0.001568  2.014030e+05 2.016105e+05 2.022030e+05 2.024120e+05    0.003249 -1.218834      0           0.000000              44
+                                NIM 615        0          0.0 2.206593e-02 -5.366826e-02 1.621316e-02   2.408319e-02       1.091420 -5.366826e-02 7.640098e-03 3.173084e-02 1.183684e-01    1.149444  2.356474      0           0.000000             615
+                                ROA 615        0          0.0 4.586147e-03 -2.819909e-02 4.070482e-03   4.250306e-03       0.926770 -2.819909e-02 2.402274e-03 6.722380e-03 2.079891e-02   -1.117102 12.325184      0           0.000000             615
+                           ROA_calc 615        0          0.0 4.586147e-03 -2.819909e-02 4.070482e-03   4.250306e-03       0.926770 -2.819909e-02 2.402274e-03 6.722380e-03 2.079891e-02   -1.117102 12.325184      0           0.000000             615
+                                ROE 615        0          0.0 5.118409e-02 -2.896455e-01 4.844956e-02   4.415355e-02       0.862642 -2.896455e-01 3.172364e-02 7.542089e-02 1.916161e-01   -1.926695 14.433008      0           0.000000             615
+                        ativo_total 615        0          0.0 3.243602e+11  3.865583e+09 5.206756e+10   5.372277e+11       1.656269  3.865583e+09 1.570983e+10 2.651195e+11 2.442450e+12    1.868224  2.511162      0           0.000000             615
+                    ativo_total_log 615        0          0.0 2.502614e+01  2.207539e+01 2.467582e+01   1.783630e+00       0.071271  2.207539e+01 2.347757e+01 2.630263e+01 2.852404e+01    0.440569 -1.035931      0           0.000000             615
+             ativos_sobre_captacoes 615        0          0.0 1.603055e+00  1.082702e+00 1.340763e+00   6.600052e-01       0.411717  1.082702e+00 1.266080e+00 1.492748e+00 3.791152e+00    2.036046  2.770902      0           0.000000             615
+             ativos_sobre_depositos 615        0          0.0 3.405553e+00  1.230473e+00 2.837037e+00   2.464547e+00       0.723685  1.230473e+00 1.642766e+00 4.211757e+00 1.589264e+01    2.586821  8.425319      0           0.000000             615
+                          captacoes 615        0          0.0 2.375460e+11  2.927210e+09 3.039425e+10   4.104764e+11       1.727987  2.927210e+09 1.038345e+10 1.913352e+11 1.941502e+12    2.025329  3.303205      0           0.000000             615
+                      captacoes_log 615        0          0.0 2.461391e+01  2.179733e+01 2.413754e+01   1.837690e+00       0.074661  2.179733e+01 2.306349e+01 2.597731e+01 2.829450e+01    0.489864 -1.038963      0           0.000000             615
+        captacoes_sobre_ativo_total 615        0          0.0 6.904265e-01  2.637721e-01 7.458438e-01   1.678854e-01       0.243162  2.637721e-01 6.699061e-01 7.898396e-01 9.236154e-01   -1.346951  0.791762      0           0.000000             615
+               controle_estrangeiro 615        0          0.0 1.430894e-01  0.000000e+00 0.000000e+00   3.504491e-01       2.449161  0.000000e+00 0.000000e+00 0.000000e+00 1.000000e+00    2.043521  2.183068    527           0.856911               2
+                        crise_covid 615        0          0.0 2.959350e-01  0.000000e+00 0.000000e+00   4.568335e-01       1.543695  0.000000e+00 0.000000e+00 1.000000e+00 1.000000e+00    0.896304 -1.200554    433           0.704065               2
+                          crise_nme 615        0          0.0 2.504065e-01  0.000000e+00 0.000000e+00   4.335998e-01       1.731584  0.000000e+00 0.000000e+00 5.000000e-01 1.000000e+00    1.155018 -0.668116    461           0.749593               2
+                          depositos 615        0          0.0 1.087560e+11  1.554227e+09 1.393966e+10   1.908198e+11       1.754568  1.554227e+09 7.866189e+09 8.445573e+10 8.990063e+11    2.088014  3.454461      0           0.000000             615
+                  depositos_a_prazo 615        0          0.0 6.652907e+10  1.012819e+09 9.246094e+09   1.130978e+11       1.699976  1.012819e+09 5.720515e+09 6.899500e+10 5.351900e+11    2.136183  3.755021      0           0.000000             615
+              depositos_a_prazo_log 615        0          0.0 2.354585e+01  2.073602e+01 2.294748e+01   1.693313e+00       0.071916  2.073602e+01 2.246734e+01 2.495731e+01 2.700591e+01    0.436929 -0.912548      0           0.000000             615
+depositos_a_prazo_sobre_ativo_total 615        0          0.0 2.819874e-01  2.661318e-02 2.537507e-01   1.706145e-01       0.605043  2.661318e-02 1.386118e-01 4.307976e-01 6.891897e-01    0.560824 -0.742153      0           0.000000             615
+                  depositos_a_vista 615        0          0.0 1.214153e+10  1.146529e+07 1.161526e+09   2.418860e+10       1.992220  1.146529e+07 4.899878e+08 5.012060e+09 1.183475e+11    2.449837  5.642224      0           0.000000             615
+</div></code></pre>
+<h2 id="3-estatísticas-descritivas-categóricas">3. Estatísticas descritivas categóricas</h2>
+<pre class="hljs"><code><div>   variavel   n  missing  missing_pct  valores_unicos  moda  freq_moda  freq_moda_pct
+id_entidade 615        0          0.0              14 ABCB4         44       0.071545
+</div></code></pre>
+<h2 id="4-diagnóstico-de-qualidade-da-base">4. Diagnóstico de qualidade da base</h2>
+<h3 id="41-variáveis-com-maior-percentual-de-missing">4.1 Variáveis com maior percentual de missing</h3>
+<pre class="hljs"><code><div>                            variavel  missing  missing_pct   dtype  valores_unicos
+                          AnoMes_ord        0          0.0   int64              44
+                         id_entidade        0          0.0  object              14
+                           trimestre        0          0.0   int64               4
+                         ativo_total        0          0.0 float64             615
+                    disponibilidades        0          0.0 float64             615
+                 permanente_ajustado        0          0.0 float64             615
+                  patrimonio_liquido        0          0.0 float64             615
+                       passivo_total        0          0.0 float64             615
+                       lucro_liquido        0          0.0 float64             615
+                           captacoes        0          0.0 float64             615
+                           depositos        0          0.0 float64             615
+                   depositos_a_prazo        0          0.0 float64             615
+                   depositos_a_vista        0          0.0 float64             615
+            despesas_administrativas        0          0.0 float64             615
+                despesas_tributarias        0          0.0 float64             615
+                despesas_de_captacao        0          0.0 float64             615
+despesas_de_intermediacao_financeira        0          0.0 float64             615
+                 despesas_de_pessoal        0          0.0 float64             615
+                operacoes_de_credito        0          0.0 float64             615
+ provisao_sobre_operacoes_de_credito        0          0.0 float64             615
+</div></code></pre>
+<h3 id="42-variáveis-com-baixa-informação">4.2 Variáveis com baixa informação</h3>
+<p>Sem registros.</p>
+<h3 id="43-possíveis-problemas-para-transformações-logarítmicas">4.3 Possíveis problemas para transformações logarítmicas</h3>
+<p>Estas variáveis têm valores menores ou iguais a zero. Caso sejam usadas em log, exigem tratamento prévio.</p>
+<pre class="hljs"><code><div>                                                 variavel  valores_menores_ou_iguais_a_zero  pct_validos           min
+                                 despesas_administrativas                               615     1.000000 -1.198609e+10
+                 despesas_de_intermediacao_sobre_receitas                               615     1.000000 -4.398749e+00
+                                     despesas_tributarias                               615     1.000000 -4.814714e+09
+                                     despesas_de_captacao                               615     1.000000 -1.048998e+11
+                     despesas_de_intermediacao_financeira                               615     1.000000 -1.471732e+11
+                                      despesas_de_pessoal                               615     1.000000 -1.356659e+10
+                      despesas_de_captacao_sobre_receitas                               615     1.000000 -1.676952e+00
+                      despesas_tributarias_sobre_receitas                               615     1.000000 -1.581038e-01
+                              despesas_adm_sobre_receitas                               615     1.000000 -6.411132e-01
+                       despesas_de_pessoal_sobre_receitas                               615     1.000000 -7.313307e-01
+                                   flag_outlier__nsfr_dec                               601     0.977236  0.000000e+00
+                                    flag_outlier__lcr_dec                               601     0.977236  0.000000e+00
+                   provisoes_de_credito_sobre_ativo_total                               583     0.947967 -7.277037e-02
+                      provisao_sobre_operacoes_de_credito                               583     0.947967 -6.034187e+10
+resultado_de_provisao_para_creditos_de_dificil_liquidacao                               580     0.943089 -2.200910e+10
+            resultado_de_provisao_pcddl_sobre_ativo_total                               580     0.943089 -3.612717e-02
+                                     controle_estrangeiro                               527     0.856911  0.000000e+00
+                                                crise_nme                               461     0.749593  0.000000e+00
+                                              crise_covid                               433     0.704065  0.000000e+00
+                                           gap_de_funding                               326     0.530081 -4.684772e-01
+</div></code></pre>
+<h2 id="5-seleção-de-variáveis-para-regressão-linear">5. Seleção de variáveis para regressão linear</h2>
+<p>Parâmetros usados:</p>
+<ul>
+<li>Máximo de missing permitido nos preditores: <strong>40.00%</strong></li>
+<li>Limiar de correlação entre preditores para poda: <strong>0.95</strong></li>
+<li>Limiar de VIF: <strong>10.00</strong></li>
+<li>Top-k do teste F univariado: <strong>25</strong></li>
+<li>Correlação mínima absoluta com o alvo: <strong>0.0000</strong></li>
+<li>Variáveis temporais incluídas: <strong>False</strong></li>
+<li>Dummies de entidade incluídas: <strong>False</strong></li>
+</ul>
+<h3 id="51-variáveis-mais-correlacionadas-com-o-alvo">5.1 Variáveis mais correlacionadas com o alvo</h3>
+<pre class="hljs"><code><div>                              variavel  corr_com_alvo  abs_corr_com_alvo  n_corr
+           captacoes_sobre_ativo_total      -0.255581           0.255581     615
+  operacoes_de_credito_sobre_captacoes       0.249096           0.249096     615
+                ativos_sobre_captacoes       0.242112           0.242112     615
+                        gap_de_funding       0.226836           0.226836     615
+   depositos_a_prazo_sobre_ativo_total      -0.225672           0.225672     615
+  operacoes_de_credito_sobre_depositos       0.169820           0.169820     615
+operacoes_de_credito_sobre_ativo_total       0.151987           0.151987     615
+              despesas_administrativas      -0.150992           0.150992     615
+                ativos_sobre_depositos       0.149800           0.149800     615
+                  despesas_tributarias      -0.142223           0.142223     615
+                   despesas_de_pessoal      -0.118160           0.118160     615
+  receitas_de_intermediacao_financeira       0.116081           0.116081     615
+   provisao_sobre_operacoes_de_credito       0.115264           0.115264     615
+  despesas_de_intermediacao_financeira      -0.096100           0.096100     615
+                  despesas_de_captacao      -0.089841           0.089841     615
+      disponibilidades_sobre_depositos       0.059212           0.059212     615
+                             crise_nme      -0.056702           0.056702     615
+                               estatal       0.052225           0.052225     615
+   depositos_a_vista_sobre_ativo_total       0.051305           0.051305     615
+                           crise_covid       0.030484           0.030484     615
+                  controle_estrangeiro       0.028842           0.028842     615
+                indice_de_imobilizacao      -0.010803           0.010803     615
+                     liquidez_imediata       0.002606           0.002606     615
+</div></code></pre>
+<h3 id="52-ranking-por-lassocv-e-teste-f">5.2 Ranking por LassoCV e teste F</h3>
+<pre class="hljs"><code><div>                              variavel   f_score  p_value_f_regression  lasso_coef_padronizado  abs_lasso_coef  lasso_alpha  rank_f_score  rank_lasso  selecionada_f_test_top_k  selecionada_lasso  selecionada_union
+              despesas_administrativas 14.301656          1.709763e-04               -0.002079        0.002079     0.000019           7.0         1.0                      True               True               True
+  operacoes_de_credito_sobre_captacoes 40.552253          3.756602e-10                0.001378        0.001378     0.000019           2.0         2.0                      True               True               True
+                ativos_sobre_depositos 14.071438          1.926917e-04                0.001270        0.001270     0.000019           8.0         3.0                      True               True               True
+                     liquidez_imediata  0.004162          9.485833e-01                0.001066        0.001066     0.000019          20.0         4.0                      True               True               True
+                   despesas_de_pessoal  8.679702          3.339908e-03                0.000945        0.000945     0.000019          10.0         5.0                      True               True               True
+                               estatal  1.676516          1.958755e-01                0.000821        0.000821     0.000019          15.0         6.0                      True               True               True
+  operacoes_de_credito_sobre_depositos 18.203140          2.299626e-05               -0.000710        0.000710     0.000019           5.0         7.0                      True               True               True
+                indice_de_imobilizacao  0.071547          7.891869e-01               -0.000682        0.000682     0.000019          19.0         8.0                      True               True               True
+      disponibilidades_sobre_depositos  2.156796          1.424533e-01               -0.000605        0.000605     0.000019          13.0         9.0                      True               True               True
+   depositos_a_prazo_sobre_ativo_total 32.893852          1.529358e-08               -0.000493        0.000493     0.000019           4.0        10.0                      True               True               True
+                             crise_nme  1.977235          1.601887e-01               -0.000430        0.000430     0.000019          14.0        11.0                      True               True               True
+operacoes_de_credito_sobre_ativo_total 14.495116          1.546496e-04                0.000227        0.000227     0.000019           6.0        12.0                      True               True               True
+   depositos_a_vista_sobre_ativo_total  1.617795          2.038818e-01                0.000122        0.000122     0.000019          16.0        13.0                      True               True               True
+                           crise_covid  0.570179          4.504778e-01                0.000039        0.000039     0.000019          17.0        14.0                      True               True               True
+           captacoes_sobre_ativo_total 42.840423          1.255802e-10               -0.000002        0.000002     0.000019           1.0        15.0                      True               True               True
+                        gap_de_funding 33.252589          1.283772e-08                0.000000        0.000000     0.000019           3.0        16.0                      True              False               True
+                  despesas_tributarias 12.655396          4.034093e-04               -0.000000        0.000000     0.000019           9.0        16.0                      True              False               True
+  receitas_de_intermediacao_financeira  8.372863          3.943990e-03               -0.000000        0.000000     0.000019          11.0        16.0                      True              False               True
+   provisao_sobre_operacoes_de_credito  8.253805          4.207425e-03                0.000000        0.000000     0.000019          12.0        16.0                      True              False               True
+                  controle_estrangeiro  0.510358          4.752561e-01                0.000000        0.000000     0.000019          18.0        16.0                      True              False               True
+</div></code></pre>
+<h3 id="53-variáveis-removidas-por-multicolinearidade-entre-preditores">5.3 Variáveis removidas por multicolinearidade entre preditores</h3>
+<pre class="hljs"><code><div>                   variavel_removida                     variavel_mantida  corr_entre_variaveis  abs_corr_alvo_removida  abs_corr_alvo_mantida                             motivo
+despesas_de_intermediacao_financeira receitas_de_intermediacao_financeira              0.985061                0.096100               0.116081 correlacao_preditiva_acima_de_0.95
+                despesas_de_captacao receitas_de_intermediacao_financeira              0.977778                0.089841               0.116081 correlacao_preditiva_acima_de_0.95
+              ativos_sobre_captacoes          captacoes_sobre_ativo_total              0.965349                0.242112               0.255581 correlacao_preditiva_acima_de_0.95
+</div></code></pre>
+<h3 id="54-variáveis-removidas-por-vif">5.4 Variáveis removidas por VIF</h3>
+<pre class="hljs"><code><div>                     variavel_removida  vif_no_momento_remocao  abs_corr_com_alvo    motivo
+  receitas_de_intermediacao_financeira               10.989829           0.116081 VIF&gt;10.00
+                   despesas_de_pessoal               15.073144           0.118160 VIF&gt;10.00
+                  despesas_tributarias               10.529412           0.142223 VIF&gt;10.00
+operacoes_de_credito_sobre_ativo_total              108.815193           0.151987 VIF&gt;10.00
+  operacoes_de_credito_sobre_depositos               10.255822           0.169820 VIF&gt;10.00
+                        gap_de_funding               24.821871           0.226836 VIF&gt;10.00
+</div></code></pre>
+<h3 id="55-variáveis-finais-sugeridas">5.5 Variáveis finais sugeridas</h3>
+<pre class="hljs"><code><div>                            variavel  corr_com_alvo  abs_corr_com_alvo      vif   f_score  p_value_f_regression  lasso_coef_padronizado  abs_lasso_coef
+            despesas_administrativas      -0.150992           0.150992 2.281637 14.301656          1.709763e-04               -0.002079        0.002079
+operacoes_de_credito_sobre_captacoes       0.249096           0.249096 2.985415 40.552253          3.756602e-10                0.001378        0.001378
+              ativos_sobre_depositos       0.149800           0.149800 4.090003 14.071438          1.926917e-04                0.001270        0.001270
+                   liquidez_imediata       0.002606           0.002606 4.460088  0.004162          9.485833e-01                0.001066        0.001066
+                             estatal       0.052225           0.052225 3.300232  1.676516          1.958755e-01                0.000821        0.000821
+              indice_de_imobilizacao      -0.010803           0.010803 3.182230  0.071547          7.891869e-01               -0.000682        0.000682
+    disponibilidades_sobre_depositos       0.059212           0.059212 3.921004  2.156796          1.424533e-01               -0.000605        0.000605
+ depositos_a_prazo_sobre_ativo_total      -0.225672           0.225672 5.429639 32.893852          1.529358e-08               -0.000493        0.000493
+                           crise_nme      -0.056702           0.056702 1.279661  1.977235          1.601887e-01               -0.000430        0.000430
+ depositos_a_vista_sobre_ativo_total       0.051305           0.051305 2.046518  1.617795          2.038818e-01                0.000122        0.000122
+                         crise_covid       0.030484           0.030484 1.225496  0.570179          4.504778e-01                0.000039        0.000039
+         captacoes_sobre_ativo_total      -0.255581           0.255581 2.699385 42.840423          1.255802e-10               -0.000002        0.000002
+ provisao_sobre_operacoes_de_credito       0.115264           0.115264 2.360830  8.253805          4.207425e-03                0.000000        0.000000
+                controle_estrangeiro       0.028842           0.028842 2.205072  0.510358          4.752561e-01                0.000000        0.000000
+</div></code></pre>
+<h2 id="6-fórmula-sugerida-para-posterior-regressão-linear-em-statsmodels">6. Fórmula sugerida para posterior regressão linear em <code>statsmodels</code></h2>
+<pre class="hljs"><code><div>formula = <span class="hljs-string">&quot;Q(&#x27;ROA&#x27;) ~ Q(&#x27;despesas_administrativas&#x27;) + Q(&#x27;operacoes_de_credito_sobre_captacoes&#x27;) + Q(&#x27;ativos_sobre_depositos&#x27;) + Q(&#x27;liquidez_imediata&#x27;) + Q(&#x27;estatal&#x27;) + Q(&#x27;indice_de_imobilizacao&#x27;) + Q(&#x27;disponibilidades_sobre_depositos&#x27;) + Q(&#x27;depositos_a_prazo_sobre_ativo_total&#x27;) + Q(&#x27;crise_nme&#x27;) + Q(&#x27;depositos_a_vista_sobre_ativo_total&#x27;) + Q(&#x27;crise_covid&#x27;) + Q(&#x27;captacoes_sobre_ativo_total&#x27;) + Q(&#x27;provisao_sobre_operacoes_de_credito&#x27;) + Q(&#x27;controle_estrangeiro&#x27;)&quot;</span>
+</div></code></pre>
+<h2 id="7-interpretação-metodológica">7. Interpretação metodológica</h2>
+<p>A seleção foi construída como etapa exploratória para reduzir dimensionalidade e problemas de multicolinearidade antes da regressão linear. O procedimento combina: filtros de qualidade dos dados, associação linear univariada com a variável-alvo, regularização L1 via LassoCV, poda de pares altamente correlacionados e poda iterativa por VIF. Em aplicações acadêmicas, recomenda-se que a especificação final seja validada por fundamentação teórica, coerência econômica, diagnóstico de resíduos e testes de robustez.</p>
+<h2 id="8-referências-metodológicas-em-formato-abnt">8. Referências metodológicas em formato ABNT</h2>
+<p>GUYON, Isabelle; ELISSEEFF, André. An introduction to variable and feature selection. <em>Journal of Machine Learning Research</em>, v. 3, p. 1157-1182, 2003.</p>
+<p>TIBSHIRANI, Robert. Regression shrinkage and selection via the lasso. <em>Journal of the Royal Statistical Society: Series B</em>, v. 58, n. 1, p. 267-288, 1996.</p>
+<p>O'BRIEN, Robert M. A caution regarding rules of thumb for variance inflation factors. <em>Quality &amp; Quantity</em>, v. 41, p. 673-690, 2007.</p>
+<p>JAMES, Gareth et al. <em>An introduction to statistical learning: with applications in R</em>. 2. ed. New York: Springer, 2021.</p>
+
+</body>
+</html>

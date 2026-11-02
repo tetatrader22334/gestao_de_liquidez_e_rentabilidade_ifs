@@ -1,0 +1,30 @@
+{
+  "base": "bases/base_final_winsorizada.xlsx",
+  "modelo": "outputs/modelos/AM2 - LSTM/liquidez_regulatoria/ROE/lstm_automl_ROE.keras",
+  "preprocessadores": "outputs/modelos/AM2 - LSTM/liquidez_regulatoria/ROE/preprocessadores_ROE.joblib",
+  "output_dir": "outputs\\SHAP\\LSTM\\liquidez_regulatoria\\ROE",
+  "config": {
+    "sheet": 0,
+    "target": "ROE",
+    "entity_col": "id_entidade",
+    "time_col": "AnoMes_ord",
+    "horizon": 1,
+    "seq_len": 8,
+    "test_periods": 8
+  },
+  "n_features": 6,
+  "features": [
+    "estatal",
+    "controle_estrangeiro",
+    "crise_nme",
+    "crise_covid",
+    "lcr_dec",
+    "nsfr_dec"
+  ],
+  "n_sequences_total": 503,
+  "n_background": 40,
+  "n_explain": 80,
+  "explainer": "permutation",
+  "inverse_y": true,
+  "random_state": 42
+}

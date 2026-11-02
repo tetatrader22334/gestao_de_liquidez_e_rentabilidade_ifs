@@ -1,0 +1,30 @@
+{
+  "base": "bases/base_final_winsorizada.xlsx",
+  "modelo": "outputs/modelos/AM2 - LSTM/liquidez_regulatoria/NIM/lstm_automl_NIM.keras",
+  "preprocessadores": "outputs/modelos/AM2 - LSTM/liquidez_regulatoria/NIM/preprocessadores_NIM.joblib",
+  "output_dir": "outputs\\SHAP\\LSTM\\liquidez_regulatoria\\NIM",
+  "config": {
+    "sheet": 0,
+    "target": "NIM",
+    "entity_col": "id_entidade",
+    "time_col": "AnoMes_ord",
+    "horizon": 1,
+    "seq_len": 12,
+    "test_periods": 8
+  },
+  "n_features": 6,
+  "features": [
+    "estatal",
+    "controle_estrangeiro",
+    "crise_nme",
+    "crise_covid",
+    "lcr_dec",
+    "nsfr_dec"
+  ],
+  "n_sequences_total": 447,
+  "n_background": 40,
+  "n_explain": 80,
+  "explainer": "permutation",
+  "inverse_y": true,
+  "random_state": 42
+}
