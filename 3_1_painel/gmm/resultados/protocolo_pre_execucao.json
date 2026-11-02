@@ -1,0 +1,63 @@
+{
+  "input_sha256": "f1a81d628e51b2b8bc8ef39fd73c479d95a016740c41fddeff7db47712b8fff3",
+  "source_drive_id": "1bapTuN842p2aAxPvRSiKgy4RyfGADEGkxx4Vo2gs2D8",
+  "N": 14,
+  "T": 44,
+  "rows": 615,
+  "missing_entity_quarters": [
+    [
+      "BSLI4",
+      35
+    ]
+  ],
+  "period": [
+    "2014Q1",
+    "2024Q4"
+  ],
+  "scenarios": [
+    [
+      "historico",
+      "2:3",
+      "1:2"
+    ],
+    [
+      "liquidez_endogena",
+      "2:3",
+      "2:3"
+    ],
+    [
+      "instrumentos_reduzidos",
+      "2:2",
+      "2:2"
+    ]
+  ],
+  "estimators": [
+    "difference",
+    "system"
+  ],
+  "targets": [
+    "ROA",
+    "ROE",
+    "NIM"
+  ],
+  "collapse": true,
+  "steps": 2,
+  "time_dummies": false,
+  "controls": [],
+  "purpose": "Reprodução e complemento do bloco regulatório; não constitui especificação ajustada completa nem validação causal.",
+  "system_assumptions": "Momentos adicionais em níveis exigem restrições sobre condições iniciais e relação das diferenças com o efeito individual; não verificadas por construção.",
+  "limitations": [
+    "N pequeno e T >= N; redução de instrumentos não elimina limitação assintótica.",
+    "LCR/NSFR são proxies contábeis.",
+    "Ausência de controles e efeitos comuns completos impede interpretação como associação plenamente ajustada.",
+    "Diferença de Hansen não implementada nesta bateria.",
+    "Não escolher especificação por significância ou p-valor de Hansen."
+  ],
+  "python": "3.12.14",
+  "versions": {
+    "pydynpd": "0.2.2",
+    "pandas": "2.2.3",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0"
+  }
+}

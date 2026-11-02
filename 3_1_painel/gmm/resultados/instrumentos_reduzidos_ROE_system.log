@@ -1,0 +1,19 @@
+ROE L1.ROE lcr_dec nsfr_dec | gmm(ROE, 2:2) gmm(lcr_dec nsfr_dec, 2:2) | collapse
+Warning: system and difference GMMs do not work well on long (T>=N) panel data
+ Dynamic panel-data estimation, two-step system GMM
+ Group variable: id_gmm                          Number of obs = 585      
+ Time variable: time_gmm                         Min obs per group: 39    
+ Number of instruments = 7                       Max obs per group: 42    
+ Number of groups = 14                           Avg obs per group: 41.79 
++----------+------------+---------------------+------------+-----------+---+
+|   ROE    |   coef.    | Corrected Std. Err. |     z      |   P>|z|   |   |
++----------+------------+---------------------+------------+-----------+---+
+|  L1.ROE  | -0.3604940 |      0.2206604      | -1.6337053 | 0.1023207 |   |
+| lcr_dec  | -0.0123819 |      0.0209196      | -0.5918793 | 0.5539314 |   |
+| nsfr_dec | 0.0234819  |      0.0136318      | 1.7225871  | 0.0849632 |   |
+|   _con   | 0.0439839  |      0.0315784      | 1.3928505  | 0.1636650 |   |
++----------+------------+---------------------+------------+-----------+---+
+Hansen test of overid. restrictions: chi(3) = 3.209 Prob > Chi2 = 0.361
+Arellano-Bond test for AR(1) in first differences: z = -1.50 Pr > z =0.134
+Arellano-Bond test for AR(2) in first differences: z = 1.45 Pr > z =0.146
+

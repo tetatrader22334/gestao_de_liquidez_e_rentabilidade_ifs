@@ -1,0 +1,244 @@
+DIAGNÓSTICOS M1 - BASE_UN_AJUSTADA
+======================================================================
+
+Informações da base:
+- arquivo_entrada: C:\Users\tetat\Desktop\Arquivos\Acadêmico\Mestrado\Dissertação\Codes\bases\base_final.xlsx
+- aba_excel: base
+- n_linhas: 615
+- n_colunas: 84
+- coluna_id: id_entidade
+- coluna_tempo: AnoMes_ord
+- dependentes_identificadas: ROE
+- modo_regressores: x-vars manual
+- impute_x: none
+- cluster_robust: sim
+- cluster_col: id_entidade
+- mixed_random_slopes: nenhuma
+
+
+### Variável dependente: ROE
+
+[amostra]
+                            variavel       tipo  n_modelo  media_modelo  desvio_padrao_modelo
+                                 ROE dependente       615      0.051184              0.044154
+operacoes_de_credito_sobre_captacoes  regressor       615      0.677681              0.541925
+ depositos_a_prazo_sobre_ativo_total  regressor       615      0.281987              0.170615
+                   liquidez_imediata  regressor       615      0.013632              0.017052
+              ativos_sobre_depositos  regressor       615      3.405553              2.464547
+    disponibilidades_sobre_depositos  regressor       615      0.036639              0.042354
+         captacoes_sobre_ativo_total  regressor       615      0.690427              0.167885
+              indice_de_imobilizacao  regressor       615      0.249398              0.154584
+ depositos_a_vista_sobre_ativo_total  regressor       615      0.038365              0.037324
+                             estatal  regressor       615      0.499187              0.500406
+                controle_estrangeiro  regressor       615      0.143089              0.350449
+                           crise_nme  regressor       615      0.250407              0.433600
+                         crise_covid  regressor       615      0.295935              0.456833
+
+[painel_resumo]
+              item      valor
+     n_observacoes 615.000000
+       n_entidades  14.000000
+  min_obs_entidade  43.000000
+media_obs_entidade  43.928571
+  max_obs_entidade  44.000000
+
+[vif]
+                            variavel      VIF
+ depositos_a_prazo_sobre_ativo_total 4.476509
+                   liquidez_imediata 4.429584
+    disponibilidades_sobre_depositos 3.918241
+              ativos_sobre_depositos 3.356433
+                             estatal 3.120477
+         captacoes_sobre_ativo_total 2.581058
+              indice_de_imobilizacao 2.415323
+                controle_estrangeiro 2.071078
+ depositos_a_vista_sobre_ativo_total 1.944179
+operacoes_de_credito_sobre_captacoes 1.721142
+                           crise_nme 1.276412
+                         crise_covid 1.213200
+
+[pooled_resumo]
+    modelo  nobs       r2  r2_adj         llf          aic          bic
+pooled_ols 615.0 0.095107 0.07707 1077.434788 -2128.869577 -2071.388487
+
+[pooled_coef]
+    modelo     cov_tipo                             variavel  coeficiente  erro_padrao  estatistica  p_valor
+pooled_ols convencional                                const     0.010035     0.012963     0.774177 0.439130
+pooled_ols convencional operacoes_de_credito_sobre_captacoes     0.009939     0.004144     2.398234 0.016778
+pooled_ols convencional  depositos_a_prazo_sobre_ativo_total    -0.077245     0.021229    -3.638744 0.000297
+pooled_ols convencional                    liquidez_imediata     0.899198     0.211290     4.255756 0.000024
+pooled_ols convencional               ativos_sobre_depositos     0.002543     0.001273     1.998044 0.046161
+pooled_ols convencional     disponibilidades_sobre_depositos    -0.188149     0.080006    -2.351698 0.019009
+pooled_ols convencional          captacoes_sobre_ativo_total     0.040029     0.016381     2.443567 0.014829
+pooled_ols convencional               indice_de_imobilizacao     0.018395     0.017210     1.068817 0.285580
+pooled_ols convencional  depositos_a_vista_sobre_ativo_total    -0.020911     0.063951    -0.326985 0.743793
+pooled_ols convencional                              estatal     0.023744     0.006043     3.929157 0.000095
+pooled_ols convencional                 controle_estrangeiro     0.011790     0.007030     1.677171 0.094028
+pooled_ols convencional                            crise_nme    -0.011272     0.004460    -2.527242 0.011751
+pooled_ols convencional                          crise_covid     0.000111     0.004127     0.026816 0.978615
+
+[pooled_coef_cluster]
+                     modelo         cov_tipo                             variavel  coeficiente  erro_padrao  estatistica  p_valor
+pooled_ols_cluster_entidade cluster_entidade                                const     0.010035     0.035690     0.281179 0.782998
+pooled_ols_cluster_entidade cluster_entidade operacoes_de_credito_sobre_captacoes     0.009939     0.009267     1.072530 0.302989
+pooled_ols_cluster_entidade cluster_entidade  depositos_a_prazo_sobre_ativo_total    -0.077245     0.027530    -2.805863 0.014862
+pooled_ols_cluster_entidade cluster_entidade                    liquidez_imediata     0.899198     0.287078     3.132243 0.007938
+pooled_ols_cluster_entidade cluster_entidade               ativos_sobre_depositos     0.002543     0.001514     1.679670 0.116879
+pooled_ols_cluster_entidade cluster_entidade     disponibilidades_sobre_depositos    -0.188149     0.086313    -2.179855 0.048248
+pooled_ols_cluster_entidade cluster_entidade          captacoes_sobre_ativo_total     0.040029     0.039091     1.023997 0.324515
+pooled_ols_cluster_entidade cluster_entidade               indice_de_imobilizacao     0.018395     0.029548     0.622532 0.544358
+pooled_ols_cluster_entidade cluster_entidade  depositos_a_vista_sobre_ativo_total    -0.020911     0.064479    -0.324307 0.750865
+pooled_ols_cluster_entidade cluster_entidade                              estatal     0.023744     0.013136     1.807515 0.093867
+pooled_ols_cluster_entidade cluster_entidade                 controle_estrangeiro     0.011790     0.012312     0.957581 0.355745
+pooled_ols_cluster_entidade cluster_entidade                            crise_nme    -0.011272     0.005716    -1.972185 0.070247
+pooled_ols_cluster_entidade cluster_entidade                          crise_covid     0.000111     0.004106     0.026954 0.978906
+
+[cluster_info]
+cluster_col  n_clusters  min_obs_cluster  media_obs_cluster  max_obs_cluster                                                                                                                       observacao
+id_entidade          14               43          43.928571               44 Erros-padrão robustos clusterizados por instituição; recomendados quando há heterocedasticidade e dependência intra-instituição.
+
+[white]
+teste         LM  p_valor_LM        F  p_valor_F                                                 observacao
+White 147.053323    0.000019 2.010458   0.000002 H0: homocedasticidade; rejeição sugere heterocedasticidade
+
+[bp_hetero]
+                              teste        LM  p_valor_LM        F  p_valor_F                                                 observacao
+Breusch-Pagan (heterocedasticidade) 16.760797    0.158819 1.405514   0.158385 H0: homocedasticidade; rejeição sugere heterocedasticidade
+
+[fe_resumo]
+ modelo  nobs       r2   r2_adj         llf          aic          bic
+fe_lsdv 615.0 0.205263 0.174334 1117.349819 -2186.699639 -2080.580705
+
+[fe_coef]
+ modelo     cov_tipo                             variavel  coeficiente  erro_padrao  estatistica      p_valor
+fe_lsdv convencional                                const    -0.011716     0.032882    -0.356307 7.217375e-01
+fe_lsdv convencional operacoes_de_credito_sobre_captacoes     0.008148     0.004959     1.642939 1.009275e-01
+fe_lsdv convencional  depositos_a_prazo_sobre_ativo_total    -0.034026     0.040594    -0.838220 4.022461e-01
+fe_lsdv convencional                    liquidez_imediata     0.930335     0.258209     3.603035 3.410151e-04
+fe_lsdv convencional               ativos_sobre_depositos     0.001608     0.001544     1.041589 2.980280e-01
+fe_lsdv convencional     disponibilidades_sobre_depositos    -0.171254     0.083638    -2.047551 4.104552e-02
+fe_lsdv convencional          captacoes_sobre_ativo_total     0.117027     0.047086     2.485372 1.321704e-02
+fe_lsdv convencional               indice_de_imobilizacao    -0.101077     0.027802    -3.635569 3.015568e-04
+fe_lsdv convencional  depositos_a_vista_sobre_ativo_total     0.038196     0.093758     0.407390 6.838692e-01
+fe_lsdv convencional                              estatal     0.004640     0.004603     1.008098 3.138197e-01
+fe_lsdv convencional                 controle_estrangeiro    -0.021985     0.009606    -2.288738 2.244654e-02
+fe_lsdv convencional                            crise_nme    -0.009127     0.004658    -1.959628 5.050892e-02
+fe_lsdv convencional                          crise_covid    -0.005514     0.004031    -1.367851 1.718786e-01
+fe_lsdv convencional                             fe_BAZA3     0.016126     0.016910     0.953639 3.406563e-01
+fe_lsdv convencional                             fe_BBAS3     0.005137     0.011128     0.461615 6.445272e-01
+fe_lsdv convencional                             fe_BBDC4     0.027754     0.011285     2.459354 1.420410e-02
+fe_lsdv convencional                             fe_BEES4    -0.021148     0.011755    -1.799057 7.251968e-02
+fe_lsdv convencional                             fe_BGIP4    -0.013756     0.010930    -1.258502 2.087072e-01
+fe_lsdv convencional                             fe_BNBR3     0.037519     0.016398     2.288012 2.248904e-02
+fe_lsdv convencional                             fe_BRSR6    -0.020859     0.008607    -2.423500 1.567098e-02
+fe_lsdv convencional                             fe_BSLI4     0.001621     0.009783     0.165714 8.684385e-01
+fe_lsdv convencional                          fe_C0080123    -0.025607     0.015817    -1.618977 1.059856e-01
+fe_lsdv convencional                          fe_C0080336     0.043282     0.010534     4.109000 4.535110e-05
+fe_lsdv convencional                             fe_PINE4    -0.057450     0.008907    -6.449684 2.332843e-10
+fe_lsdv convencional                             fe_RPAD6     0.017650     0.012307     1.434130 1.520640e-01
+fe_lsdv convencional                            fe_SANB11     0.028631     0.010992     2.604665 9.427799e-03
+
+[fe_coef_cluster]
+                  modelo         cov_tipo                             variavel  coeficiente  erro_padrao  estatistica  p_valor
+fe_lsdv_cluster_entidade cluster_entidade                                const    -0.011716     0.077743    -0.150703 0.882523
+fe_lsdv_cluster_entidade cluster_entidade operacoes_de_credito_sobre_captacoes     0.008148     0.011651     0.699334 0.496667
+fe_lsdv_cluster_entidade cluster_entidade  depositos_a_prazo_sobre_ativo_total    -0.034026     0.057096    -0.595955 0.561439
+fe_lsdv_cluster_entidade cluster_entidade                    liquidez_imediata     0.930335     0.384342     2.420589 0.030871
+fe_lsdv_cluster_entidade cluster_entidade               ativos_sobre_depositos     0.001608     0.001610     0.998711 0.336162
+fe_lsdv_cluster_entidade cluster_entidade     disponibilidades_sobre_depositos    -0.171254     0.049484    -3.460819 0.004220
+fe_lsdv_cluster_entidade cluster_entidade          captacoes_sobre_ativo_total     0.117027     0.121057     0.966707 0.351332
+fe_lsdv_cluster_entidade cluster_entidade               indice_de_imobilizacao    -0.101077     0.050650    -1.995587 0.067370
+fe_lsdv_cluster_entidade cluster_entidade  depositos_a_vista_sobre_ativo_total     0.038196     0.093208     0.409791 0.688632
+fe_lsdv_cluster_entidade cluster_entidade                              estatal     0.004640     0.007117     0.651980 0.525774
+fe_lsdv_cluster_entidade cluster_entidade                 controle_estrangeiro    -0.021985     0.015590    -1.410143 0.181973
+fe_lsdv_cluster_entidade cluster_entidade                            crise_nme    -0.009127     0.005605    -1.628237 0.127456
+fe_lsdv_cluster_entidade cluster_entidade                          crise_covid    -0.005514     0.004286    -1.286458 0.220722
+fe_lsdv_cluster_entidade cluster_entidade                             fe_BAZA3     0.016126     0.038381     0.420147 0.681239
+fe_lsdv_cluster_entidade cluster_entidade                             fe_BBAS3     0.005137     0.019555     0.262684 0.796911
+fe_lsdv_cluster_entidade cluster_entidade                             fe_BBDC4     0.027754     0.019316     1.436820 0.174398
+fe_lsdv_cluster_entidade cluster_entidade                             fe_BEES4    -0.021148     0.025440    -0.831271 0.420827
+fe_lsdv_cluster_entidade cluster_entidade                             fe_BGIP4    -0.013756     0.015710    -0.875610 0.397132
+fe_lsdv_cluster_entidade cluster_entidade                             fe_BNBR3     0.037519     0.036596     1.025216 0.323961
+fe_lsdv_cluster_entidade cluster_entidade                             fe_BRSR6    -0.020859     0.011722    -1.779562 0.098522
+fe_lsdv_cluster_entidade cluster_entidade                             fe_BSLI4     0.001621     0.013640     0.118858 0.907205
+fe_lsdv_cluster_entidade cluster_entidade                          fe_C0080123    -0.025607     0.027904    -0.917685 0.375496
+fe_lsdv_cluster_entidade cluster_entidade                          fe_C0080336     0.043282     0.010462     4.137137 0.001169
+fe_lsdv_cluster_entidade cluster_entidade                             fe_PINE4    -0.057450     0.011964    -4.801811 0.000346
+fe_lsdv_cluster_entidade cluster_entidade                             fe_RPAD6     0.017650     0.023266     0.758620 0.461613
+fe_lsdv_cluster_entidade cluster_entidade                            fe_SANB11     0.028631     0.012068     2.372595 0.033772
+
+[chow]
+                            teste        F  gl_num  gl_den      p_valor                                        observacao
+Chow / Poolability (pooled vs FE) 6.301256      13     591 3.364353e-11 H0: pooled OLS é suficiente; rejeição favorece FE
+
+[re_resumo]
+                  modelo  nobs  r2  r2_adj         llf          aic          bic
+random_intercept_mixedlm   615 NaN     NaN 1092.118939 -2154.237877 -2087.913543
+
+[re_coef]
+                  modelo     cov_tipo                             variavel  coeficiente  erro_padrao  estatistica  p_valor
+random_intercept_mixedlm convencional                                const     0.023390     0.025046     0.933873 0.350369
+random_intercept_mixedlm convencional operacoes_de_credito_sobre_captacoes     0.008227     0.004722     1.742050 0.081500
+random_intercept_mixedlm convencional  depositos_a_prazo_sobre_ativo_total    -0.079961     0.032704    -2.444973 0.014486
+random_intercept_mixedlm convencional                    liquidez_imediata     0.884258     0.245442     3.602714 0.000315
+random_intercept_mixedlm convencional               ativos_sobre_depositos     0.001098     0.001454     0.755250 0.450099
+random_intercept_mixedlm convencional     disponibilidades_sobre_depositos    -0.182811     0.081594    -2.240509 0.025058
+random_intercept_mixedlm convencional          captacoes_sobre_ativo_total     0.076847     0.030218     2.543060 0.010989
+random_intercept_mixedlm convencional               indice_de_imobilizacao    -0.065960     0.027046    -2.438846 0.014734
+random_intercept_mixedlm convencional  depositos_a_vista_sobre_ativo_total     0.027846     0.085795     0.324558 0.745515
+random_intercept_mixedlm convencional                              estatal     0.005770     0.012449     0.463489 0.643014
+random_intercept_mixedlm convencional                 controle_estrangeiro    -0.007535     0.016686    -0.451615 0.651547
+random_intercept_mixedlm convencional                            crise_nme    -0.011269     0.004441    -2.537396 0.011168
+random_intercept_mixedlm convencional                          crise_covid    -0.003266     0.003995    -0.817451 0.413671
+random_intercept_mixedlm convencional                            Group Var     0.185189     0.102233     1.811431 0.070074
+
+[mixed_resumo]
+              modelo  nobs  r2  r2_adj         llf          aic          bic
+mixedlm_fixed_random   615 NaN     NaN 1092.118939 -2154.237877 -2087.913543
+
+[mixed_coef]
+              modelo     cov_tipo                             variavel  coeficiente  erro_padrao  estatistica  p_valor
+mixedlm_fixed_random convencional                                const     0.023390     0.025046     0.933873 0.350369
+mixedlm_fixed_random convencional operacoes_de_credito_sobre_captacoes     0.008227     0.004722     1.742050 0.081500
+mixedlm_fixed_random convencional  depositos_a_prazo_sobre_ativo_total    -0.079961     0.032704    -2.444973 0.014486
+mixedlm_fixed_random convencional                    liquidez_imediata     0.884258     0.245442     3.602714 0.000315
+mixedlm_fixed_random convencional               ativos_sobre_depositos     0.001098     0.001454     0.755250 0.450099
+mixedlm_fixed_random convencional     disponibilidades_sobre_depositos    -0.182811     0.081594    -2.240509 0.025058
+mixedlm_fixed_random convencional          captacoes_sobre_ativo_total     0.076847     0.030218     2.543060 0.010989
+mixedlm_fixed_random convencional               indice_de_imobilizacao    -0.065960     0.027046    -2.438846 0.014734
+mixedlm_fixed_random convencional  depositos_a_vista_sobre_ativo_total     0.027846     0.085795     0.324558 0.745515
+mixedlm_fixed_random convencional                              estatal     0.005770     0.012449     0.463489 0.643014
+mixedlm_fixed_random convencional                 controle_estrangeiro    -0.007535     0.016686    -0.451615 0.651547
+mixedlm_fixed_random convencional                            crise_nme    -0.011269     0.004441    -2.537396 0.011168
+mixedlm_fixed_random convencional                          crise_covid    -0.003266     0.003995    -0.817451 0.413671
+mixedlm_fixed_random convencional                            Group Var     0.185189     0.102233     1.811431 0.070074
+
+[mixed_varcomp]
+              modelo                  componente    valor                            estrutura  converged
+mixedlm_fixed_random              residual_scale 0.001597 intercepto aleatório por instituição       True
+mixedlm_fixed_random cov_re[Group Var,Group Var] 0.000296 intercepto aleatório por instituição       True
+
+[mixed_random_effects]
+              modelo entidade  efeito_aleatorio_Group Var
+mixedlm_fixed_random    ABCB4                   -0.009320
+mixedlm_fixed_random    BAZA3                   -0.005044
+mixedlm_fixed_random    BBAS3                   -0.000795
+mixedlm_fixed_random    BBDC4                    0.014352
+mixedlm_fixed_random    BEES4                   -0.009922
+mixedlm_fixed_random    BGIP4                   -0.007088
+mixedlm_fixed_random    BNBR3                    0.019352
+mixedlm_fixed_random    BRSR6                   -0.008236
+mixedlm_fixed_random    BSLI4                    0.011732
+mixedlm_fixed_random C0080123                   -0.007723
+mixedlm_fixed_random C0080336                    0.024406
+mixedlm_fixed_random    PINE4                   -0.042115
+mixedlm_fixed_random    RPAD6                    0.011081
+mixedlm_fixed_random   SANB11                    0.009320
+
+[hausman]
+             teste       qui2  gl  p_valor                                 observacao
+Hausman (FE vs RE) -52.238703  12      1.0 H0: RE é consistente; rejeição favorece FE
+
+[bp_lm_re]
+                          teste       LM  gl      p_valor                                                                                                       observacao
+Breusch-Pagan LM (pooled vs RE) 36.81915   1 1.296108e-09 H0: pooled OLS é suficiente; rejeição favorece RE | painel desbalanceado: estatística reportada como aproximação

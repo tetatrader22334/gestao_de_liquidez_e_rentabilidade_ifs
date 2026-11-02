@@ -1,0 +1,183 @@
+DIAGNÓSTICOS M1 - BASE_UN_AJUSTADA
+======================================================================
+
+Informações da base:
+- arquivo_entrada: C:\Users\tetat\Desktop\Arquivos\Acadêmico\Mestrado\Dissertação\Codes\bases\base_final.xlsx
+- aba_excel: base
+- n_linhas: 615
+- n_colunas: 84
+- coluna_id: id_entidade
+- coluna_tempo: AnoMes_ord
+- dependentes_identificadas: ROE
+- modo_regressores: x-vars manual
+- impute_x: none
+- cluster_robust: sim
+- cluster_col: id_entidade
+- mixed_random_slopes: nenhuma
+
+
+### Variável dependente: ROE
+
+[amostra]
+            variavel       tipo  n_modelo  media_modelo  desvio_padrao_modelo
+                 ROE dependente       615      0.051184              0.044154
+             lcr_dec  regressor       615      0.590508              0.485814
+            nsfr_dec  regressor       615      1.665035              0.847571
+             estatal  regressor       615      0.499187              0.500406
+controle_estrangeiro  regressor       615      0.143089              0.350449
+           crise_nme  regressor       615      0.250407              0.433600
+         crise_covid  regressor       615      0.295935              0.456833
+
+[painel_resumo]
+              item      valor
+     n_observacoes 615.000000
+       n_entidades  14.000000
+  min_obs_entidade  43.000000
+media_obs_entidade  43.928571
+  max_obs_entidade  44.000000
+
+[vif]
+            variavel      VIF
+            nsfr_dec 1.488998
+             lcr_dec 1.440519
+controle_estrangeiro 1.243091
+             estatal 1.217295
+           crise_nme 1.176617
+         crise_covid 1.166690
+
+[pooled_resumo]
+    modelo  nobs       r2   r2_adj         llf          aic          bic
+pooled_ols 615.0 0.023403 0.013766 1053.985589 -2093.971179 -2063.019823
+
+[pooled_coef]
+    modelo     cov_tipo             variavel  coeficiente  erro_padrao  estatistica      p_valor
+pooled_ols convencional                const     0.055548     0.005150    10.786718 6.095475e-25
+pooled_ols convencional              lcr_dec     0.005870     0.004372     1.342628 1.798935e-01
+pooled_ols convencional             nsfr_dec    -0.006757     0.002548    -2.652199 8.205624e-03
+pooled_ols convencional              estatal     0.009429     0.003902     2.416640 1.595793e-02
+pooled_ols convencional controle_estrangeiro     0.002915     0.005630     0.517830 6.047655e-01
+pooled_ols convencional            crise_nme    -0.006555     0.004427    -1.480610 1.392286e-01
+pooled_ols convencional          crise_covid    -0.000211     0.004184    -0.050533 9.597143e-01
+
+[pooled_coef_cluster]
+                     modelo         cov_tipo             variavel  coeficiente  erro_padrao  estatistica  p_valor
+pooled_ols_cluster_entidade cluster_entidade                const     0.055548     0.014241     3.900568 0.001824
+pooled_ols_cluster_entidade cluster_entidade              lcr_dec     0.005870     0.008640     0.679356 0.508828
+pooled_ols_cluster_entidade cluster_entidade             nsfr_dec    -0.006757     0.005921    -1.141229 0.274362
+pooled_ols_cluster_entidade cluster_entidade              estatal     0.009429     0.011241     0.838784 0.416748
+pooled_ols_cluster_entidade cluster_entidade controle_estrangeiro     0.002915     0.011611     0.251086 0.805673
+pooled_ols_cluster_entidade cluster_entidade            crise_nme    -0.006555     0.006124    -1.070383 0.303918
+pooled_ols_cluster_entidade cluster_entidade          crise_covid    -0.000211     0.003759    -0.056247 0.956000
+
+[cluster_info]
+cluster_col  n_clusters  min_obs_cluster  media_obs_cluster  max_obs_cluster                                                                                                                       observacao
+id_entidade          14               43          43.928571               44 Erros-padrão robustos clusterizados por instituição; recomendados quando há heterocedasticidade e dependência intra-instituição.
+
+[white]
+teste        LM  p_valor_LM       F  p_valor_F                                                 observacao
+White 34.363105    0.033123 1.67118   0.030932 H0: homocedasticidade; rejeição sugere heterocedasticidade
+
+[bp_hetero]
+                              teste        LM  p_valor_LM        F  p_valor_F                                                 observacao
+Breusch-Pagan (heterocedasticidade) 14.408746    0.025389 2.431082   0.024885 H0: homocedasticidade; rejeição sugere heterocedasticidade
+
+[fe_resumo]
+ modelo  nobs       r2   r2_adj         llf          aic         bic
+fe_lsdv 615.0 0.158654 0.134696 1099.824765 -2163.649531 -2084.06033
+
+[fe_coef]
+ modelo     cov_tipo             variavel  coeficiente  erro_padrao  estatistica      p_valor
+fe_lsdv convencional                const     0.033212     0.007219     4.600561 5.148431e-06
+fe_lsdv convencional              lcr_dec    -0.004284     0.005672    -0.755283 4.503769e-01
+fe_lsdv convencional             nsfr_dec     0.008076     0.005104     1.582360 1.140969e-01
+fe_lsdv convencional              estatal     0.010004     0.002962     3.377002 7.804567e-04
+fe_lsdv convencional controle_estrangeiro     0.011536     0.005846     1.973233 4.892982e-02
+fe_lsdv convencional            crise_nme    -0.003801     0.004240    -0.896452 3.703729e-01
+fe_lsdv convencional          crise_covid    -0.000507     0.003924    -0.129201 8.972419e-01
+fe_lsdv convencional             fe_BAZA3    -0.002819     0.006864    -0.410686 6.814502e-01
+fe_lsdv convencional             fe_BBAS3     0.013209     0.006451     2.047518 4.104439e-02
+fe_lsdv convencional             fe_BBDC4     0.015441     0.005738     2.691071 7.321830e-03
+fe_lsdv convencional             fe_BEES4    -0.002626     0.005923    -0.443352 6.576716e-01
+fe_lsdv convencional             fe_BGIP4    -0.005339     0.006352    -0.840446 4.009947e-01
+fe_lsdv convencional             fe_BNBR3     0.023562     0.006620     3.559232 4.015162e-04
+fe_lsdv convencional             fe_BRSR6    -0.021666     0.010731    -2.019111 4.392210e-02
+fe_lsdv convencional             fe_BSLI4     0.005682     0.006314     0.899956 3.685065e-01
+fe_lsdv convencional          fe_C0080123    -0.011220     0.010041    -1.117455 2.642495e-01
+fe_lsdv convencional          fe_C0080336     0.030918     0.006080     5.085304 4.920410e-07
+fe_lsdv convencional             fe_PINE4    -0.046149     0.005958    -7.745890 4.091217e-14
+fe_lsdv convencional             fe_RPAD6     0.022682     0.005840     3.884164 1.141584e-04
+fe_lsdv convencional            fe_SANB11    -0.000418     0.008790    -0.047519 9.621151e-01
+
+[fe_coef_cluster]
+                  modelo         cov_tipo             variavel  coeficiente  erro_padrao  estatistica      p_valor
+fe_lsdv_cluster_entidade cluster_entidade                const     0.033212     0.014475     2.294413 3.906157e-02
+fe_lsdv_cluster_entidade cluster_entidade              lcr_dec    -0.004284     0.013865    -0.308973 7.622383e-01
+fe_lsdv_cluster_entidade cluster_entidade             nsfr_dec     0.008076     0.014400     0.560874 5.844217e-01
+fe_lsdv_cluster_entidade cluster_entidade              estatal     0.010004     0.002853     3.506839 3.863056e-03
+fe_lsdv_cluster_entidade cluster_entidade controle_estrangeiro     0.011536     0.003419     3.374098 4.984355e-03
+fe_lsdv_cluster_entidade cluster_entidade            crise_nme    -0.003801     0.006200    -0.612990 5.504569e-01
+fe_lsdv_cluster_entidade cluster_entidade          crise_covid    -0.000507     0.003782    -0.134048 8.954176e-01
+fe_lsdv_cluster_entidade cluster_entidade             fe_BAZA3    -0.002819     0.011329    -0.248836 8.073756e-01
+fe_lsdv_cluster_entidade cluster_entidade             fe_BBAS3     0.013209     0.006452     2.047466 6.137645e-02
+fe_lsdv_cluster_entidade cluster_entidade             fe_BBDC4     0.015441     0.001389    11.115887 5.203719e-08
+fe_lsdv_cluster_entidade cluster_entidade             fe_BEES4    -0.002626     0.004400    -0.596848 5.608603e-01
+fe_lsdv_cluster_entidade cluster_entidade             fe_BGIP4    -0.005339     0.007719    -0.691612 5.013466e-01
+fe_lsdv_cluster_entidade cluster_entidade             fe_BNBR3     0.023562     0.010069     2.340069 3.588390e-02
+fe_lsdv_cluster_entidade cluster_entidade             fe_BRSR6    -0.021666     0.016440    -1.317915 2.102842e-01
+fe_lsdv_cluster_entidade cluster_entidade             fe_BSLI4     0.005682     0.004659     1.219547 2.443015e-01
+fe_lsdv_cluster_entidade cluster_entidade          fe_C0080123    -0.011220     0.020961    -0.535287 6.014891e-01
+fe_lsdv_cluster_entidade cluster_entidade          fe_C0080336     0.030918     0.006358     4.862442 3.101825e-04
+fe_lsdv_cluster_entidade cluster_entidade             fe_PINE4    -0.046149     0.005257    -8.777710 7.984600e-07
+fe_lsdv_cluster_entidade cluster_entidade             fe_RPAD6     0.022682     0.003790     5.983991 4.563536e-05
+fe_lsdv_cluster_entidade cluster_entidade            fe_SANB11    -0.000418     0.001476    -0.282922 7.816912e-01
+
+[chow]
+                            teste        F  gl_num  gl_den      p_valor                                        observacao
+Chow / Poolability (pooled vs FE) 7.382355      13     597 1.524336e-13 H0: pooled OLS é suficiente; rejeição favorece FE
+
+[re_resumo]
+                  modelo  nobs  r2  r2_adj  llf  aic  bic
+random_intercept_mixedlm   615 NaN     NaN  inf -inf -inf
+
+[re_coef]
+                  modelo     cov_tipo             variavel   coeficiente   erro_padrao   estatistica  p_valor
+random_intercept_mixedlm convencional                const -1.760798e-17           NaN           NaN      NaN
+random_intercept_mixedlm convencional              lcr_dec -4.283820e-03      0.005588 -7.665848e-01 0.443328
+random_intercept_mixedlm convencional             nsfr_dec  8.076341e-03      0.005029  1.606038e+00 0.108266
+random_intercept_mixedlm convencional              estatal -8.083101e-18           NaN           NaN      NaN
+random_intercept_mixedlm convencional controle_estrangeiro -6.188251e-18 216636.812341 -2.856509e-23 1.000000
+random_intercept_mixedlm convencional            crise_nme -3.800509e-03      0.004177 -9.098657e-01 0.362893
+random_intercept_mixedlm convencional          crise_covid -5.069587e-04      0.003866 -1.311346e-01 0.895669
+random_intercept_mixedlm convencional            Group Var  0.000000e+00           NaN           NaN      NaN
+
+[mixed_resumo]
+              modelo  nobs  r2  r2_adj  llf  aic  bic
+mixedlm_fixed_random   615 NaN     NaN  inf -inf -inf
+
+[mixed_coef]
+              modelo     cov_tipo             variavel   coeficiente   erro_padrao   estatistica  p_valor
+mixedlm_fixed_random convencional                const -1.760798e-17           NaN           NaN      NaN
+mixedlm_fixed_random convencional              lcr_dec -4.283820e-03      0.005588 -7.665848e-01 0.443328
+mixedlm_fixed_random convencional             nsfr_dec  8.076341e-03      0.005029  1.606038e+00 0.108266
+mixedlm_fixed_random convencional              estatal -8.083101e-18           NaN           NaN      NaN
+mixedlm_fixed_random convencional controle_estrangeiro -6.188251e-18 216636.812341 -2.856509e-23 1.000000
+mixedlm_fixed_random convencional            crise_nme -3.800509e-03      0.004177 -9.098657e-01 0.362893
+mixedlm_fixed_random convencional          crise_covid -5.069587e-04      0.003866 -1.311346e-01 0.895669
+mixedlm_fixed_random convencional            Group Var  0.000000e+00           NaN           NaN      NaN
+
+[mixed_varcomp]
+              modelo                  componente    valor                            estrutura  converged
+mixedlm_fixed_random              residual_scale 0.001638 intercepto aleatório por instituição       True
+mixedlm_fixed_random cov_re[Group Var,Group Var] 0.000000 intercepto aleatório por instituição       True
+
+[mixed_random_effects]
+              modelo                                                              erro
+mixedlm_fixed_random Cannot predict random effects from singular covariance structure.
+
+[hausman]
+             teste          qui2  gl  p_valor                                 observacao
+Hausman (FE vs RE) -5.841494e-16   6      1.0 H0: RE é consistente; rejeição favorece FE
+
+[bp_lm_re]
+                          teste         LM  gl  p_valor                                                                                                       observacao
+Breusch-Pagan LM (pooled vs RE) 146.960582   1      0.0 H0: pooled OLS é suficiente; rejeição favorece RE | painel desbalanceado: estatística reportada como aproximação

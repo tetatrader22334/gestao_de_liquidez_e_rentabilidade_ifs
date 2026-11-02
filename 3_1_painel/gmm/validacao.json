@@ -1,0 +1,8 @@
+{
+  "historical_ROA_reproduction": "passed within published rounding",
+  "row_order_invariance": "passed for six historical specification models",
+  "final_runs": 18,
+  "estimation_failures": 0,
+  "environment_note": "wcwidth dependency added before successful run; preliminary development runs replaced after verification",
+  "implementation_note": "Explicit entity-time sorting prevents misassignment in pydynpd 0.2.2 input balancing. Instrument count uses z_information.num_instr."
+}

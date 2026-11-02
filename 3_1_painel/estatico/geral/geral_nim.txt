@@ -1,0 +1,310 @@
+DIAGNÓSTICOS M1 - BASE_UN_AJUSTADA
+======================================================================
+
+Informações da base:
+- arquivo_entrada: C:\Users\tetat\Desktop\Arquivos\Acadêmico\Mestrado\Dissertação\Codes\bases\base_final.xlsx
+- aba_excel: base
+- n_linhas: 615
+- n_colunas: 84
+- coluna_id: id_entidade
+- coluna_tempo: AnoMes_ord
+- dependentes_identificadas: NIM
+- modo_regressores: x-vars manual
+- impute_x: none
+- cluster_robust: sim
+- cluster_col: id_entidade
+- mixed_random_slopes: nenhuma
+
+
+### Variável dependente: NIM
+
+[amostra]
+                                              variavel       tipo  n_modelo  media_modelo  desvio_padrao_modelo
+                                                   NIM dependente       615  2.206593e-02          2.408319e-02
+                                patrimonio_liquido_log  regressor       615  2.256823e+01          1.800411e+00
+                  operacoes_de_credito_sobre_captacoes  regressor       615  6.776811e-01          5.419246e-01
+         resultado_de_provisao_pcddl_sobre_ativo_total  regressor       615 -4.985032e-03          5.841062e-03
+                 resultado_de_intermediacao_financeira  regressor       615  2.563466e+09          5.526496e+09
+                           captacoes_sobre_ativo_total  regressor       615  6.904265e-01          1.678854e-01
+     rendas_de_prestacao_de_servicos_sobre_ativo_total  regressor       615  4.974259e-03          5.203238e-03
+                   despesas_tributarias_sobre_receitas  regressor       615 -3.766607e-02          2.053082e-02
+         rendas_de_operacoes_com_TVM_sobre_ativo_total  regressor       615  1.481174e-02          9.269466e-03
+                           despesas_adm_sobre_receitas  regressor       615 -1.514659e-01          7.693845e-02
+                                       hhi_periodo_dec  regressor       615  2.828811e-01          1.661080e-02
+                                     liquidez_imediata  regressor       615  1.363235e-02          1.705175e-02
+                                  controle_estrangeiro  regressor       615  1.430894e-01          3.504491e-01
+                               selic_fim_trimestre_dec  regressor       615  7.592683e-03          3.175193e-03
+              despesas_de_intermediacao_sobre_receitas  regressor       615 -7.296818e-01          3.207963e-01
+         rendas_de_tarifas_bancarias_sobre_ativo_total  regressor       615  2.259756e-03          2.187227e-03
+                   despesas_de_captacao_sobre_receitas  regressor       615 -4.648640e-01          2.152036e-01
+                                           crise_covid  regressor       615  2.959350e-01          4.568335e-01
+                                ativos_sobre_depositos  regressor       615  3.405553e+00          2.464547e+00
+                                             crise_nme  regressor       615  2.504065e-01          4.335998e-01
+                      disponibilidades_sobre_depositos  regressor       615  3.663919e-02          4.235365e-02
+                                indice_de_basileia_dec  regressor       615  1.520729e-01          1.915307e-02
+                                ipca_fim_trimestre_dec  regressor       615  5.235935e-03          4.334589e-03
+                         multiplicador_capital_proprio  regressor       615  1.216254e+01          3.498369e+00
+                                     pib_indice_sa_log  regressor       615  5.151590e+00          4.787040e-02
+receitas_de_intermediacao_financeira_sobre_ativo_total  regressor       615  4.605199e-02          2.461748e-02
+
+[painel_resumo]
+              item      valor
+     n_observacoes 615.000000
+       n_entidades  14.000000
+  min_obs_entidade  43.000000
+media_obs_entidade  43.928571
+  max_obs_entidade  44.000000
+
+[vif]
+                                              variavel      VIF
+                                       hhi_periodo_dec 5.716593
+                           captacoes_sobre_ativo_total 5.234854
+                   despesas_de_captacao_sobre_receitas 4.950106
+receitas_de_intermediacao_financeira_sobre_ativo_total 4.796560
+                                     liquidez_imediata 4.612701
+     rendas_de_prestacao_de_servicos_sobre_ativo_total 4.574979
+                      disponibilidades_sobre_depositos 4.192497
+                                             crise_nme 3.805080
+         rendas_de_tarifas_bancarias_sobre_ativo_total 3.681063
+              despesas_de_intermediacao_sobre_receitas 3.499308
+                                     pib_indice_sa_log 3.390426
+                   despesas_tributarias_sobre_receitas 3.141906
+         rendas_de_operacoes_com_TVM_sobre_ativo_total 3.116934
+                                patrimonio_liquido_log 3.073100
+                               selic_fim_trimestre_dec 3.070295
+                           despesas_adm_sobre_receitas 2.842060
+         resultado_de_provisao_pcddl_sobre_ativo_total 2.800390
+                                ativos_sobre_depositos 2.570800
+                 resultado_de_intermediacao_financeira 2.289552
+                                           crise_covid 1.973820
+                         multiplicador_capital_proprio 1.866465
+                  operacoes_de_credito_sobre_captacoes 1.768623
+                                indice_de_basileia_dec 1.681865
+                                  controle_estrangeiro 1.419566
+                                ipca_fim_trimestre_dec 1.275431
+
+[pooled_resumo]
+erro
+    
+
+[pooled_coef]
+erro
+    
+
+[pooled_coef_cluster]
+                     modelo         cov_tipo                                               variavel   coeficiente  erro_padrao  estatistica  p_valor
+pooled_ols_cluster_entidade cluster_entidade                                                  const -8.296487e-02 1.198999e-01    -0.691951 0.501140
+pooled_ols_cluster_entidade cluster_entidade                                 patrimonio_liquido_log -1.558060e-03 5.662936e-04    -2.751330 0.016496
+pooled_ols_cluster_entidade cluster_entidade                   operacoes_de_credito_sobre_captacoes  4.984507e-04 1.242801e-03     0.401070 0.694883
+pooled_ols_cluster_entidade cluster_entidade          resultado_de_provisao_pcddl_sobre_ativo_total  3.694779e-01 2.699440e-01     1.368721 0.194274
+pooled_ols_cluster_entidade cluster_entidade                  resultado_de_intermediacao_financeira  5.752055e-14 1.938766e-13     0.296686 0.771393
+pooled_ols_cluster_entidade cluster_entidade                            captacoes_sobre_ativo_total -3.587673e-02 7.912449e-03    -4.534214 0.000561
+pooled_ols_cluster_entidade cluster_entidade      rendas_de_prestacao_de_servicos_sobre_ativo_total  1.067122e+00 3.815168e-01     2.797050 0.015115
+pooled_ols_cluster_entidade cluster_entidade                    despesas_tributarias_sobre_receitas -5.729647e-02 7.365532e-02    -0.777900 0.450554
+pooled_ols_cluster_entidade cluster_entidade          rendas_de_operacoes_com_TVM_sobre_ativo_total -3.343316e-01 1.051301e-01    -3.180170 0.007239
+pooled_ols_cluster_entidade cluster_entidade                            despesas_adm_sobre_receitas -7.964879e-04 1.319574e-02    -0.060359 0.952787
+pooled_ols_cluster_entidade cluster_entidade                                        hhi_periodo_dec  1.891230e-02 5.242132e-02     0.360775 0.724062
+pooled_ols_cluster_entidade cluster_entidade                                      liquidez_imediata  3.342346e-01 9.379410e-02     3.563493 0.003466
+pooled_ols_cluster_entidade cluster_entidade                                   controle_estrangeiro -2.284495e-03 1.756007e-03    -1.300960 0.215859
+pooled_ols_cluster_entidade cluster_entidade                                selic_fim_trimestre_dec  1.933249e-01 2.773898e-01     0.696943 0.498113
+pooled_ols_cluster_entidade cluster_entidade               despesas_de_intermediacao_sobre_receitas  2.895153e-02 7.154105e-03     4.046842 0.001385
+pooled_ols_cluster_entidade cluster_entidade          rendas_de_tarifas_bancarias_sobre_ativo_total  2.517692e+00 8.306726e-01     3.030908 0.009648
+pooled_ols_cluster_entidade cluster_entidade                    despesas_de_captacao_sobre_receitas -9.535614e-03 9.152089e-03    -1.041906 0.316445
+pooled_ols_cluster_entidade cluster_entidade                                            crise_covid  3.864995e-06 9.247867e-04     0.004179 0.996729
+pooled_ols_cluster_entidade cluster_entidade                                 ativos_sobre_depositos  8.789587e-04 4.160924e-04     2.112412 0.054568
+pooled_ols_cluster_entidade cluster_entidade                                              crise_nme -5.493404e-03 1.270306e-03    -4.324475 0.000825
+pooled_ols_cluster_entidade cluster_entidade                       disponibilidades_sobre_depositos -7.372790e-02 1.798231e-02    -4.100024 0.001253
+pooled_ols_cluster_entidade cluster_entidade                                 indice_de_basileia_dec  4.442124e-02 2.942766e-02     1.509506 0.155086
+pooled_ols_cluster_entidade cluster_entidade                                 ipca_fim_trimestre_dec -6.831183e-02 7.479814e-02    -0.913283 0.377721
+pooled_ols_cluster_entidade cluster_entidade                          multiplicador_capital_proprio  1.351130e-04 3.603165e-04     0.374984 0.713719
+pooled_ols_cluster_entidade cluster_entidade                                      pib_indice_sa_log  2.622288e-02 2.165573e-02     1.210898 0.247489
+pooled_ols_cluster_entidade cluster_entidade receitas_de_intermediacao_financeira_sobre_ativo_total  4.688924e-01 1.232638e-01     3.803975 0.002191
+
+[cluster_info]
+cluster_col  n_clusters  min_obs_cluster  media_obs_cluster  max_obs_cluster                                                                                                                       observacao
+id_entidade          14               43          43.928571               44 Erros-padrão robustos clusterizados por instituição; recomendados quando há heterocedasticidade e dependência intra-instituição.
+
+[white]
+erro
+    
+
+[bp_hetero]
+erro
+    
+
+[fe_resumo]
+ modelo  nobs       r2   r2_adj         llf          aic          bic
+fe_lsdv 615.0 0.894362 0.887588 2110.671311 -4145.342622 -3977.320976
+
+[fe_coef]
+ modelo     cov_tipo                                               variavel   coeficiente  erro_padrao  estatistica      p_valor
+fe_lsdv convencional                                                  const -1.369464e-01 8.977117e-02    -1.525505 1.276811e-01
+fe_lsdv convencional                                 patrimonio_liquido_log  2.263947e-03 2.473087e-03     0.915433 3.603466e-01
+fe_lsdv convencional                   operacoes_de_credito_sobre_captacoes  1.640634e-04 1.028041e-03     0.159588 8.732612e-01
+fe_lsdv convencional          resultado_de_provisao_pcddl_sobre_ativo_total  6.015710e-01 1.084295e-01     5.548040 4.406097e-08
+fe_lsdv convencional                  resultado_de_intermediacao_financeira  2.449747e-13 9.740481e-14     2.515017 1.217335e-02
+fe_lsdv convencional                            captacoes_sobre_ativo_total -4.670026e-02 9.775102e-03    -4.777471 2.254409e-06
+fe_lsdv convencional      rendas_de_prestacao_de_servicos_sobre_ativo_total  1.093016e+00 1.517454e-01     7.202961 1.848635e-12
+fe_lsdv convencional                    despesas_tributarias_sobre_receitas -4.417348e-02 3.086121e-02    -1.431359 1.528686e-01
+fe_lsdv convencional          rendas_de_operacoes_com_TVM_sobre_ativo_total -1.631162e-01 8.429583e-02    -1.935045 5.347314e-02
+fe_lsdv convencional                            despesas_adm_sobre_receitas  2.580265e-03 8.375640e-03     0.308068 7.581419e-01
+fe_lsdv convencional                                        hhi_periodo_dec  5.234577e-02 6.296665e-02     0.831325 4.061338e-01
+fe_lsdv convencional                                      liquidez_imediata  2.083401e-01 5.533485e-02     3.765080 1.835528e-04
+fe_lsdv convencional                                   controle_estrangeiro -1.172491e-02 6.452526e-03    -1.817103 6.971990e-02
+fe_lsdv convencional                                selic_fim_trimestre_dec  2.194078e-01 2.082967e-01     1.053343 2.926249e-01
+fe_lsdv convencional               despesas_de_intermediacao_sobre_receitas  2.440578e-02 2.084564e-03    11.707860 1.481700e-28
+fe_lsdv convencional          rendas_de_tarifas_bancarias_sobre_ativo_total  3.848835e+00 3.655695e-01    10.528326 7.884968e-24
+fe_lsdv convencional                    despesas_de_captacao_sobre_receitas -7.718469e-03 4.405651e-03    -1.751948 8.031405e-02
+fe_lsdv convencional                                            crise_covid -2.180160e-04 1.019469e-03    -0.213853 8.307376e-01
+fe_lsdv convencional                                 ativos_sobre_depositos  4.856786e-04 2.699510e-04     1.799136 7.251957e-02
+fe_lsdv convencional                                              crise_nme -3.925457e-03 1.500019e-03    -2.616939 9.104797e-03
+fe_lsdv convencional                       disponibilidades_sobre_depositos -4.859440e-02 1.735581e-02    -2.799892 5.283127e-03
+fe_lsdv convencional                                 indice_de_basileia_dec  2.903993e-02 2.518130e-02     1.153234 2.492920e-01
+fe_lsdv convencional                                 ipca_fim_trimestre_dec -5.130793e-02 8.564499e-02    -0.599077 5.493568e-01
+fe_lsdv convencional                          multiplicador_capital_proprio -2.375859e-05 1.904551e-04    -0.124746 9.007677e-01
+fe_lsdv convencional                                      pib_indice_sa_log  2.289678e-02 1.303476e-02     1.756594 7.951739e-02
+fe_lsdv convencional receitas_de_intermediacao_financeira_sobre_ativo_total  3.297353e-01 3.798583e-02     8.680480 4.033710e-17
+fe_lsdv convencional                                               fe_BAZA3 -1.776471e-02 7.261136e-03    -2.446547 1.472060e-02
+fe_lsdv convencional                                               fe_BBAS3 -2.247234e-02 1.327644e-02    -1.692648 9.106226e-02
+fe_lsdv convencional                                               fe_BBDC4 -2.732144e-02 1.295062e-02    -2.109663 3.531740e-02
+fe_lsdv convencional                                               fe_BEES4 -3.494959e-03 6.481282e-03    -0.539239 5.899301e-01
+fe_lsdv convencional                                               fe_BGIP4 -2.761110e-03 6.024441e-03    -0.458318 6.468966e-01
+fe_lsdv convencional                                               fe_BNBR3 -1.171820e-02 7.932141e-03    -1.477306 1.401393e-01
+fe_lsdv convencional                                               fe_BRSR6 -1.805977e-02 7.721342e-03    -2.338942 1.967881e-02
+fe_lsdv convencional                                               fe_BSLI4  3.699618e-03 5.950006e-03     0.621784 5.343296e-01
+fe_lsdv convencional                                            fe_C0080123  9.588103e-03 6.478091e-03     1.480081 1.393973e-01
+fe_lsdv convencional                                            fe_C0080336 -1.879529e-02 9.869603e-03    -1.904362 5.736018e-02
+fe_lsdv convencional                                               fe_PINE4 -5.337850e-03 5.534483e-03    -0.964471 3.352137e-01
+fe_lsdv convencional                                               fe_RPAD6 -1.078549e-02 8.919741e-03    -1.209171 2.270924e-01
+fe_lsdv convencional                                              fe_SANB11 -1.180613e-02 7.977748e-03    -1.479882 1.394505e-01
+
+[fe_coef_cluster]
+                  modelo         cov_tipo                                               variavel   coeficiente  erro_padrao  estatistica  p_valor
+fe_lsdv_cluster_entidade cluster_entidade                                                  const -1.369464e-01 1.574184e-01    -0.869952 0.400105
+fe_lsdv_cluster_entidade cluster_entidade                                 patrimonio_liquido_log  2.263947e-03 5.029147e-03     0.450165 0.660007
+fe_lsdv_cluster_entidade cluster_entidade                   operacoes_de_credito_sobre_captacoes  1.640634e-04 1.323747e-03     0.123939 0.903260
+fe_lsdv_cluster_entidade cluster_entidade          resultado_de_provisao_pcddl_sobre_ativo_total  6.015710e-01 2.313244e-01     2.600551 0.021983
+fe_lsdv_cluster_entidade cluster_entidade                  resultado_de_intermediacao_financeira  2.449747e-13 2.477553e-13     0.988777 0.340820
+fe_lsdv_cluster_entidade cluster_entidade                            captacoes_sobre_ativo_total -4.670026e-02 2.682433e-02    -1.740967 0.105287
+fe_lsdv_cluster_entidade cluster_entidade      rendas_de_prestacao_de_servicos_sobre_ativo_total  1.093016e+00 4.503293e-01     2.427148 0.030494
+fe_lsdv_cluster_entidade cluster_entidade                    despesas_tributarias_sobre_receitas -4.417348e-02 5.953139e-02    -0.742020 0.471270
+fe_lsdv_cluster_entidade cluster_entidade          rendas_de_operacoes_com_TVM_sobre_ativo_total -1.631162e-01 2.054551e-01    -0.793926 0.441490
+fe_lsdv_cluster_entidade cluster_entidade                            despesas_adm_sobre_receitas  2.580265e-03 8.706829e-03     0.296350 0.771644
+fe_lsdv_cluster_entidade cluster_entidade                                        hhi_periodo_dec  5.234577e-02 8.694575e-02     0.602051 0.557495
+fe_lsdv_cluster_entidade cluster_entidade                                      liquidez_imediata  2.083401e-01 4.731469e-02     4.403286 0.000713
+fe_lsdv_cluster_entidade cluster_entidade                                   controle_estrangeiro -1.172491e-02 9.422986e-03    -1.244288 0.235361
+fe_lsdv_cluster_entidade cluster_entidade                                selic_fim_trimestre_dec  2.194078e-01 3.440819e-01     0.637662 0.534764
+fe_lsdv_cluster_entidade cluster_entidade               despesas_de_intermediacao_sobre_receitas  2.440578e-02 6.231654e-03     3.916421 0.001770
+fe_lsdv_cluster_entidade cluster_entidade          rendas_de_tarifas_bancarias_sobre_ativo_total  3.848835e+00 1.067698e+00     3.604797 0.003202
+fe_lsdv_cluster_entidade cluster_entidade                    despesas_de_captacao_sobre_receitas -7.718469e-03 1.119729e-02    -0.689316 0.502743
+fe_lsdv_cluster_entidade cluster_entidade                                            crise_covid -2.180160e-04 7.291482e-04    -0.299001 0.769666
+fe_lsdv_cluster_entidade cluster_entidade                                 ativos_sobre_depositos  4.856786e-04 4.818659e-04     1.007912 0.331889
+fe_lsdv_cluster_entidade cluster_entidade                                              crise_nme -3.925457e-03 1.074685e-03    -3.652657 0.002922
+fe_lsdv_cluster_entidade cluster_entidade                       disponibilidades_sobre_depositos -4.859440e-02 1.578378e-02    -3.078755 0.008799
+fe_lsdv_cluster_entidade cluster_entidade                                 indice_de_basileia_dec  2.903993e-02 4.258449e-02     0.681937 0.507247
+fe_lsdv_cluster_entidade cluster_entidade                                 ipca_fim_trimestre_dec -5.130793e-02 7.922538e-02    -0.647620 0.528503
+fe_lsdv_cluster_entidade cluster_entidade                          multiplicador_capital_proprio -2.375859e-05 4.800701e-04    -0.049490 0.961281
+fe_lsdv_cluster_entidade cluster_entidade                                      pib_indice_sa_log  2.289678e-02 1.921373e-02     1.191688 0.254685
+fe_lsdv_cluster_entidade cluster_entidade receitas_de_intermediacao_financeira_sobre_ativo_total  3.297353e-01 1.705249e-01     1.933648 0.075229
+fe_lsdv_cluster_entidade cluster_entidade                                               fe_BAZA3 -1.776471e-02 1.820818e-02    -0.975644 0.347047
+fe_lsdv_cluster_entidade cluster_entidade                                               fe_BBAS3 -2.247234e-02 2.544499e-02    -0.883174 0.393182
+fe_lsdv_cluster_entidade cluster_entidade                                               fe_BBDC4 -2.732144e-02 2.590598e-02    -1.054639 0.310798
+fe_lsdv_cluster_entidade cluster_entidade                                               fe_BEES4 -3.494959e-03 1.221776e-02    -0.286056 0.779343
+fe_lsdv_cluster_entidade cluster_entidade                                               fe_BGIP4 -2.761110e-03 1.035547e-02    -0.266633 0.793934
+fe_lsdv_cluster_entidade cluster_entidade                                               fe_BNBR3 -1.171820e-02 2.105972e-02    -0.556427 0.587370
+fe_lsdv_cluster_entidade cluster_entidade                                               fe_BRSR6 -1.805977e-02 1.332388e-02    -1.355444 0.198359
+fe_lsdv_cluster_entidade cluster_entidade                                               fe_BSLI4  3.699618e-03 9.323912e-03     0.396788 0.697961
+fe_lsdv_cluster_entidade cluster_entidade                                            fe_C0080123  9.588103e-03 1.094840e-02     0.875754 0.397057
+fe_lsdv_cluster_entidade cluster_entidade                                            fe_C0080336 -1.879529e-02 1.957072e-02    -0.960378 0.354388
+fe_lsdv_cluster_entidade cluster_entidade                                               fe_PINE4 -5.337850e-03 8.425676e-03    -0.633522 0.537380
+fe_lsdv_cluster_entidade cluster_entidade                                               fe_RPAD6 -1.078549e-02 1.601029e-02    -0.673660 0.512328
+fe_lsdv_cluster_entidade cluster_entidade                                              fe_SANB11 -1.180613e-02 1.579379e-02    -0.747517 0.468058
+
+[chow]
+                            teste        F  gl_num  gl_den      p_valor                                        observacao
+Chow / Poolability (pooled vs FE) 8.349701      13     577 1.443290e-15 H0: pooled OLS é suficiente; rejeição favorece FE
+
+[re_resumo]
+                  modelo  nobs  r2  r2_adj  llf  aic  bic
+random_intercept_mixedlm   615 NaN     NaN  inf -inf -inf
+
+[re_coef]
+                  modelo     cov_tipo                                               variavel   coeficiente  erro_padrao   estatistica      p_valor
+random_intercept_mixedlm convencional                                                  const -1.524857e-28          NaN           NaN          NaN
+random_intercept_mixedlm convencional                                 patrimonio_liquido_log  2.623974e-23 4.391648e-03  5.974918e-21 1.000000e+00
+random_intercept_mixedlm convencional                   operacoes_de_credito_sobre_captacoes -1.069248e-23 1.825572e-03 -5.857058e-21 1.000000e+00
+random_intercept_mixedlm convencional          resultado_de_provisao_pcddl_sobre_ativo_total -7.293224e-26 1.925465e-01 -3.787774e-25 1.000000e+00
+random_intercept_mixedlm convencional                  resultado_de_intermediacao_financeira  1.526077e-12 1.729730e-13  8.822628e+00 1.118044e-18
+random_intercept_mixedlm convencional                            captacoes_sobre_ativo_total  1.398313e-24 1.735839e-02  8.055547e-23 1.000000e+00
+random_intercept_mixedlm convencional      rendas_de_prestacao_de_servicos_sobre_ativo_total  1.416590e-25 2.694658e-01  5.257031e-25 1.000000e+00
+random_intercept_mixedlm convencional                    despesas_tributarias_sobre_receitas -3.427454e-25 5.480260e-02 -6.254181e-24 1.000000e+00
+random_intercept_mixedlm convencional          rendas_de_operacoes_com_TVM_sobre_ativo_total  4.864912e-25 1.496905e-01  3.249980e-24 1.000000e+00
+random_intercept_mixedlm convencional                            despesas_adm_sobre_receitas  1.886243e-24 1.487326e-02  1.268211e-22 1.000000e+00
+random_intercept_mixedlm convencional                                        hhi_periodo_dec -1.132724e-24 1.118147e-01 -1.013037e-23 1.000000e+00
+random_intercept_mixedlm convencional                                      liquidez_imediata -1.050147e-25 9.826230e-02 -1.068718e-24 1.000000e+00
+random_intercept_mixedlm convencional                                   controle_estrangeiro -9.685032e-39          NaN           NaN          NaN
+random_intercept_mixedlm convencional                                selic_fim_trimestre_dec  1.633931e-27 3.698883e-01  4.417363e-27 1.000000e+00
+random_intercept_mixedlm convencional               despesas_de_intermediacao_sobre_receitas  4.151150e-23 3.701718e-03  1.121412e-20 1.000000e+00
+random_intercept_mixedlm convencional          rendas_de_tarifas_bancarias_sobre_ativo_total  6.922432e-26 6.491696e-01  1.066352e-25 1.000000e+00
+random_intercept_mixedlm convencional                    despesas_de_captacao_sobre_receitas  9.492168e-24 7.823450e-03  1.213297e-21 1.000000e+00
+random_intercept_mixedlm convencional                                            crise_covid -5.432265e-25 1.810348e-03 -3.000675e-22 1.000000e+00
+random_intercept_mixedlm convencional                                 ativos_sobre_depositos -5.790873e-23 4.793725e-04 -1.208011e-19 1.000000e+00
+random_intercept_mixedlm convencional                                              crise_nme -2.314426e-23 2.663697e-03 -8.688770e-21 1.000000e+00
+random_intercept_mixedlm convencional                       disponibilidades_sobre_depositos -9.473401e-25 3.082003e-02 -3.073780e-23 1.000000e+00
+random_intercept_mixedlm convencional                                 indice_de_basileia_dec -3.879635e-26 4.471636e-02 -8.676098e-25 1.000000e+00
+random_intercept_mixedlm convencional                                 ipca_fim_trimestre_dec -1.442260e-26 1.520863e-01 -9.483169e-26 1.000000e+00
+random_intercept_mixedlm convencional                          multiplicador_capital_proprio -9.475523e-23 3.382056e-04 -2.801705e-19 1.000000e+00
+random_intercept_mixedlm convencional                                      pib_indice_sa_log  3.711325e-24 2.314681e-02  1.603385e-22 1.000000e+00
+random_intercept_mixedlm convencional receitas_de_intermediacao_financeira_sobre_ativo_total  1.788653e-24 6.745434e-02  2.651650e-23 1.000000e+00
+random_intercept_mixedlm convencional                                              Group Var  0.000000e+00          NaN           NaN          NaN
+
+[mixed_resumo]
+              modelo  nobs  r2  r2_adj  llf  aic  bic
+mixedlm_fixed_random   615 NaN     NaN  inf -inf -inf
+
+[mixed_coef]
+              modelo     cov_tipo                                               variavel   coeficiente  erro_padrao   estatistica      p_valor
+mixedlm_fixed_random convencional                                                  const -1.524857e-28          NaN           NaN          NaN
+mixedlm_fixed_random convencional                                 patrimonio_liquido_log  2.623974e-23 4.391648e-03  5.974918e-21 1.000000e+00
+mixedlm_fixed_random convencional                   operacoes_de_credito_sobre_captacoes -1.069248e-23 1.825572e-03 -5.857058e-21 1.000000e+00
+mixedlm_fixed_random convencional          resultado_de_provisao_pcddl_sobre_ativo_total -7.293224e-26 1.925465e-01 -3.787774e-25 1.000000e+00
+mixedlm_fixed_random convencional                  resultado_de_intermediacao_financeira  1.526077e-12 1.729730e-13  8.822628e+00 1.118044e-18
+mixedlm_fixed_random convencional                            captacoes_sobre_ativo_total  1.398313e-24 1.735839e-02  8.055547e-23 1.000000e+00
+mixedlm_fixed_random convencional      rendas_de_prestacao_de_servicos_sobre_ativo_total  1.416590e-25 2.694658e-01  5.257031e-25 1.000000e+00
+mixedlm_fixed_random convencional                    despesas_tributarias_sobre_receitas -3.427454e-25 5.480260e-02 -6.254181e-24 1.000000e+00
+mixedlm_fixed_random convencional          rendas_de_operacoes_com_TVM_sobre_ativo_total  4.864912e-25 1.496905e-01  3.249980e-24 1.000000e+00
+mixedlm_fixed_random convencional                            despesas_adm_sobre_receitas  1.886243e-24 1.487326e-02  1.268211e-22 1.000000e+00
+mixedlm_fixed_random convencional                                        hhi_periodo_dec -1.132724e-24 1.118147e-01 -1.013037e-23 1.000000e+00
+mixedlm_fixed_random convencional                                      liquidez_imediata -1.050147e-25 9.826230e-02 -1.068718e-24 1.000000e+00
+mixedlm_fixed_random convencional                                   controle_estrangeiro -9.685032e-39          NaN           NaN          NaN
+mixedlm_fixed_random convencional                                selic_fim_trimestre_dec  1.633931e-27 3.698883e-01  4.417363e-27 1.000000e+00
+mixedlm_fixed_random convencional               despesas_de_intermediacao_sobre_receitas  4.151150e-23 3.701718e-03  1.121412e-20 1.000000e+00
+mixedlm_fixed_random convencional          rendas_de_tarifas_bancarias_sobre_ativo_total  6.922432e-26 6.491696e-01  1.066352e-25 1.000000e+00
+mixedlm_fixed_random convencional                    despesas_de_captacao_sobre_receitas  9.492168e-24 7.823450e-03  1.213297e-21 1.000000e+00
+mixedlm_fixed_random convencional                                            crise_covid -5.432265e-25 1.810348e-03 -3.000675e-22 1.000000e+00
+mixedlm_fixed_random convencional                                 ativos_sobre_depositos -5.790873e-23 4.793725e-04 -1.208011e-19 1.000000e+00
+mixedlm_fixed_random convencional                                              crise_nme -2.314426e-23 2.663697e-03 -8.688770e-21 1.000000e+00
+mixedlm_fixed_random convencional                       disponibilidades_sobre_depositos -9.473401e-25 3.082003e-02 -3.073780e-23 1.000000e+00
+mixedlm_fixed_random convencional                                 indice_de_basileia_dec -3.879635e-26 4.471636e-02 -8.676098e-25 1.000000e+00
+mixedlm_fixed_random convencional                                 ipca_fim_trimestre_dec -1.442260e-26 1.520863e-01 -9.483169e-26 1.000000e+00
+mixedlm_fixed_random convencional                          multiplicador_capital_proprio -9.475523e-23 3.382056e-04 -2.801705e-19 1.000000e+00
+mixedlm_fixed_random convencional                                      pib_indice_sa_log  3.711325e-24 2.314681e-02  1.603385e-22 1.000000e+00
+mixedlm_fixed_random convencional receitas_de_intermediacao_financeira_sobre_ativo_total  1.788653e-24 6.745434e-02  2.651650e-23 1.000000e+00
+mixedlm_fixed_random convencional                                              Group Var  0.000000e+00          NaN           NaN          NaN
+
+[mixed_varcomp]
+              modelo                  componente    valor                            estrutura  converged
+mixedlm_fixed_random              residual_scale 0.000206 intercepto aleatório por instituição       True
+mixedlm_fixed_random cov_re[Group Var,Group Var] 0.000000 intercepto aleatório por instituição       True
+
+[mixed_random_effects]
+              modelo                                                              erro
+mixedlm_fixed_random Cannot predict random effects from singular covariance structure.
+
+[hausman]
+             teste        qui2  gl  p_valor                                 observacao
+Hausman (FE vs RE) -406.365698  25      1.0 H0: RE é consistente; rejeição favorece FE
+
+[bp_lm_re]
+                          teste        LM  gl      p_valor                                                                                                       observacao
+Breusch-Pagan LM (pooled vs RE) 69.792883   1 1.110223e-16 H0: pooled OLS é suficiente; rejeição favorece RE | painel desbalanceado: estatística reportada como aproximação

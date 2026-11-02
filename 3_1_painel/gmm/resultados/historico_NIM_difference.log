@@ -1,0 +1,18 @@
+NIM L1.NIM lcr_dec nsfr_dec | gmm(NIM, 2:3) gmm(lcr_dec nsfr_dec, 1:2) | nolevel collapse
+Warning: system and difference GMMs do not work well on long (T>=N) panel data
+ Dynamic panel-data estimation, two-step difference GMM
+ Group variable: id_gmm                          Number of obs = 585      
+ Time variable: time_gmm                         Min obs per group: 39    
+ Number of instruments = 6                       Max obs per group: 42    
+ Number of groups = 14                           Avg obs per group: 41.79 
++----------+------------+---------------------+------------+-----------+-----+
+|   NIM    |   coef.    | Corrected Std. Err. |     z      |   P>|z|   |     |
++----------+------------+---------------------+------------+-----------+-----+
+|  L1.NIM  | -0.7362127 |      0.2046880      | -3.5967557 | 0.0003222 | *** |
+| lcr_dec  | 0.0185500  |      0.0535060      | 0.3466907  | 0.7288237 |     |
+| nsfr_dec | -0.1377957 |      0.1105021      | -1.2469958 | 0.2123990 |     |
++----------+------------+---------------------+------------+-----------+-----+
+Hansen test of overid. restrictions: chi(3) = 5.623 Prob > Chi2 = 0.131
+Arellano-Bond test for AR(1) in first differences: z = 0.61 Pr > z =0.543
+Arellano-Bond test for AR(2) in first differences: z = -1.58 Pr > z =0.114
+
